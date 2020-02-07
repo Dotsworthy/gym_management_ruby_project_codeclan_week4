@@ -26,6 +26,19 @@ class Booking
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "
+      UPDATE bookings SET
+      (
+      member_id,
+      session_id
+      ) =
+      ($1, $2)
+      WHERE id = $3"
+    values = [@member_id, @session_id, @id]
+    SqlRunner.run(sql,values)
+  end
+
   def delete()
     sql = "DELETE FROM bookings WHERE id = $1"
     values = [@id]
@@ -33,7 +46,7 @@ class Booking
   end
 
   def self.delete_all()
-    sql = "DELETE FROM members"
+    sql = "DELETE FROM bookings"
     SqlRunner.run( sql )
   end
 
