@@ -40,8 +40,6 @@ class Member
     SqlRunner.run(sql,values)
   end
 
-
-
   def delete()
     sql = "DELETE FROM members WHERE id = $1"
     values = [@id]
@@ -53,4 +51,16 @@ class Member
     SqlRunner.run( sql )
   end
 
+  def self.all()
+    sql = "SELECT * FROM members"
+    results = SqlRunner.run(sql)
+    return results.map { |member| Member.new(member) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM members WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |member| Member.new(member) }
+  end
 end
