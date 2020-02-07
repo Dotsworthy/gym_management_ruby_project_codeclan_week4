@@ -30,9 +30,22 @@ class Session
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM sessions"
+    results = SqlRunner.run(sql)
+    return results.map { |session| Session.new(session) }
+  end
+
   def self.delete_all()
     sql = "DELETE FROM sessions"
     SqlRunner.run( sql )
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM sessions WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |session| Session.new(session) }
   end
 
 end
