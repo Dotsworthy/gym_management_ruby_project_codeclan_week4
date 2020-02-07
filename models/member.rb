@@ -63,4 +63,5 @@ class Member
     result = SqlRunner.run(sql, values)
     return result.map { |member| Member.new(member) }
   end
+  
 end

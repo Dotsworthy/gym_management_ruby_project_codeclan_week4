@@ -4,6 +4,7 @@ require_relative( "../models/booking.rb" )
 require("pry-byebug")
 
 Member.delete_all()
+Session.delete_all()
 
 member1 = Member.new({
   "first_name" => "Dwayne",
@@ -17,5 +18,15 @@ member2 = Member.new({
   })
 member2.save()
 
-binding.pry
+session1 = Session.new({
+  "name" => "Suplexes"
+  })
+session1.save()
+
+session2 = Session.new({
+  "name" => "Elbow Drops"
+  })
+session2.save()
+
+binding.pry()
 nil
