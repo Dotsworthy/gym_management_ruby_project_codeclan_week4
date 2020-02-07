@@ -24,6 +24,15 @@ class Session
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "
+      UPDATE sessions SET
+      name = $1
+      WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql,values)
+  end
+
   def delete()
     sql = "DELETE FROM sessions WHERE id = $1"
     values = [@id]
