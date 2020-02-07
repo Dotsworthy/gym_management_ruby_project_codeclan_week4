@@ -54,7 +54,7 @@ class Booking
   sql = "SELECT * FROM bookings
   WHERE id = $1"
   values = [id]
-  result = SqlRunner.run( sql, values )
+  result = SqlRunner.run(sql, values)
   return Booking.new( result.first )
 end
 
