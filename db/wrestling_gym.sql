@@ -4,7 +4,8 @@ DROP TABLE sessions;
 
 CREATE TABLE members (
   id SERIAL PRIMARY KEY,
-  name VARCHAR (255)
+  first_name VARCHAR (255),
+  last_name VARCHAR (255)
 );
 
 CREATE TABLE sessions (
