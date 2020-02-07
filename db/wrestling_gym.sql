@@ -15,6 +15,6 @@ CREATE TABLE sessions (
 
 CREATE TABLE bookings (
   id SERIAL PRIMARY KEY,
-  member_id INT REFERENCES members(id) ON DELETE CASCADE,
+  member_id INT REFERENCES members(id),
   session_id INT REFERENCES sessions(id) ON DELETE CASCADE
 );
