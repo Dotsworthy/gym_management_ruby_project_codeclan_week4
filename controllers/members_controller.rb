@@ -29,6 +29,11 @@ get "/members/:id/update" do
   erb (:"members/edit")
 end
 
+post "/members/:id/delete" do
+  Member.delete(params[:id])
+  redirect to ("/members")
+end
+
 get "/members/:id" do
     @member = Member.find(params[:id].to_i)
     erb (:"members/show")
