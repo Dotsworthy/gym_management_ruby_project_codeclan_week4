@@ -65,7 +65,7 @@ class Member
     sql = "SELECT * FROM members WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return result.map { |member| Member.new(member) }
+    return Member.new(result.first)
   end
 
 end
