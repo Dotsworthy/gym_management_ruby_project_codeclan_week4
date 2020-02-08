@@ -1,0 +1,11 @@
+<h1>Gym Sessions</h1>
+<nav>
+  <a href="members/new">Create Session</a>
+</nav>
+<% for session in @sessions %>
+
+  <ul>
+    <li><a href="/sessions/<%= session.id%>"> <%= session.name %></a>
+  </ul>
+
+<% end %>

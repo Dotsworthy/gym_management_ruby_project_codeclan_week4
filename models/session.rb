@@ -54,7 +54,6 @@ class Session
     sql = "SELECT * FROM sessions WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return result.map { |session| Session.new(session) }
+    return Session.new(result.first)
   end
-
 end

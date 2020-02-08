@@ -1,0 +1,9 @@
+<p>Name: <%= @session.name %> </p>
+
+<form method="post" action ="/sessions/<%= @session.id %>/delete">
+  <button type="submit" value="Delete Session">Delete Session</button>
+</form>
+
+<form method="get" action ="/sessions/<%= @session.id %>/update">
+  <button type="submit" value="Update session">Update Session</button>
+</form>
