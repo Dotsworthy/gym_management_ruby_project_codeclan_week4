@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/session.rb' )
+require_relative('../models/session.rb')
+require_relative('../models/booking.rb')
 also_reload( '../models/*' )
 
 get "/sessions" do
@@ -37,4 +38,9 @@ end
 get "/sessions/:id/update" do
   @session = Session.find(params[:id].to_i)
   erb (:"sessions/edit")
+end
+
+get "/sessions/:id/bookings" do
+  @bookings = Session.find_bookings(params[:id].to_i)
+  erb (:"sessions/bookings")
 end
