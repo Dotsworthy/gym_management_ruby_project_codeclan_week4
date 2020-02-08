@@ -46,6 +46,10 @@ class Member
     SqlRunner.run(sql, values)
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
   def self.delete_all()
     sql = "DELETE FROM members"
     SqlRunner.run( sql )
@@ -63,5 +67,5 @@ class Member
     result = SqlRunner.run(sql, values)
     return result.map { |member| Member.new(member) }
   end
-  
+
 end

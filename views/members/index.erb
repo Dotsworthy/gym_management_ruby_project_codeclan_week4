@@ -1,0 +1,8 @@
+<h1>Gym Members</h1>
+<% for member in @members %>
+
+  <ul>
+    <li><a href="/members/<%= member.id%>"> <%= member.pretty_name %></a>
+  </ul>
+
+<% end %>

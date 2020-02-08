@@ -3,9 +3,10 @@ require_relative( "../models/session.rb" )
 require_relative( "../models/booking.rb" )
 require("pry-byebug")
 
+Booking.delete_all()
 Member.delete_all()
 Session.delete_all()
-Booking.delete_all()
+
 
 member1 = Member.new({
   "first_name" => "Dwayne",
