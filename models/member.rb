@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Member
 
-  attr_reader :id, :first_name, :last_name
+  attr_reader :id, :first_name, :last_name, :alias, :image_url
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

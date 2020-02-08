@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Session
 
-  attr_reader :id, :name
+  attr_reader :id, :type, :starts_at, :duration, :capacity
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

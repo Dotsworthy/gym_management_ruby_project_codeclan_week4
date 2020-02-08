@@ -1,4 +1,7 @@
-<p>Name: <%= @session.name %> </p>
+<p>Type: <%= @session.type %> </p>
+<p>Starts_at: <%= @session.starts_at %> </p>
+<p>Duration: <%= @session.duration %> hour </p>
+<p>Capacity <%= @session.capacity %> </p>
 
 <form method="get" action ="/sessions/<%= @session.id %>/bookings">
   <button type="submit" value="Show Bookings">Show Bookings</button>
