@@ -29,6 +29,11 @@ get "/bookings/:id/update" do
   erb (:"bookings/edit")
 end
 
+post "/bookings/:id/delete" do
+  Booking.delete(params[:id])
+  redirect to ("/bookings")
+end
+
 
 get "/bookings/:id" do
   @booking = Booking.find(params[:id].to_i)
