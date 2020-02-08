@@ -1,6 +1,11 @@
+<% member = Member.find(@booking.member_id) %>
+<% session = Session.find(@booking.session_id) %>
+
 <p>Booking id: <%= @booking.id %> </p>
 <p>Member id: <%= @booking.member_id %> </p>
+<p>Member name: <%= member.pretty_name %></p>
 <p>Session id: <%= @booking.session_id %></p>
+<p>Session name: <%= session.name %></p>
 
 <form method="post" action ="/bookings/<%= @booking.id %>/delete">
   <button type="submit" value="Delete Booking">Delete Booking</button>

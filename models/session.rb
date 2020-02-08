@@ -58,7 +58,7 @@ class Session
   end
 
   def self.find_bookings(id)
-    sql = "SELECT * FROM bookings INNER JOIN sessions ON sessions.id = bookings.session_id WHERE sessions.id = $1"
+    sql = "SELECT * FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE sessions.id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return results.map { |booking| Booking.new(booking) }
