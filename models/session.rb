@@ -6,30 +6,43 @@ class Session
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @type = options['type']
+    @starts_at = options['starts_at']
+    @duration = options['duration']
+    @capacity = options['capacity']
   end
 
   def save()
     sql = "INSERT INTO sessions
       (
-      name
+      type,
+      starts_at,
+      duration,
+      capacity
       )
       VALUES
       (
-        $1
+        $1, $2, $3, $4
       )
       RETURNING id"
-    values = [@name]
+    values = [@type, @starts_at, @duration, @capacity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "
-      UPDATE sessions SET
-      name = $1
-      WHERE id = $2"
-    values = [@name, @id]
+      UPDATE sessions SET (
+      type,
+      starts_at,
+      duration,
+      capacity
+      )
+      = (
+      $1, $2, $3, $4
+      )
+      WHERE id = $5"
+    values = [@type, @starts_at, @duration, @capacity, @id]
     SqlRunner.run(sql,values)
   end
 
