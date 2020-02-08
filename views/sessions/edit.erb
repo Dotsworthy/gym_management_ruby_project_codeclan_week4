@@ -1,0 +1,6 @@
+<form method = "post" action ="/sessions/<%= @session.id %>">
+
+  <label for = "name">Session Name:</label>
+  <input id= "name" type="test" name="name" value= "<%= @session.name %>"/>
+
+  <input type="submit" value="Update Session"/>

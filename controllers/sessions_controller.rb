@@ -18,7 +18,18 @@ get "/sessions/new" do
   erb (:"sessions/new")
 end
 
+post "/sessions/:id" do
+  session = Session.new(params)
+  session.update()
+  redirect to("/sessions")
+end
+
 get "/sessions/:id" do
   @session = Session.find(params[:id].to_i)
   erb (:"sessions/show")
+end
+
+get "/sessions/:id/update" do
+  @session = Session.find(params[:id].to_i)
+  erb (:"sessions/edit")
 end
