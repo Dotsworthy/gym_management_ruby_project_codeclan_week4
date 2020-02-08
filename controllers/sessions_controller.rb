@@ -29,6 +29,11 @@ get "/sessions/:id" do
   erb (:"sessions/show")
 end
 
+post "/sessions/:id/delete" do
+  Session.delete(params[:id])
+  redirect to ("/sessions")
+end
+
 get "/sessions/:id/update" do
   @session = Session.find(params[:id].to_i)
   erb (:"sessions/edit")

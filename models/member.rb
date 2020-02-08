@@ -40,14 +40,14 @@ class Member
     SqlRunner.run(sql,values)
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
   def self.delete(id)
     sql = "DELETE FROM members WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
-  end
-
-  def pretty_name()
-    return "#{@first_name} #{@last_name}"
   end
 
   def self.delete_all()
