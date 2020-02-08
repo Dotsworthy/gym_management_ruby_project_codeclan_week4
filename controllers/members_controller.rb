@@ -28,3 +28,8 @@ get "/members/:id/update" do
   @member = Member.find(params[:id].to_i)
   erb (:"members/edit")
 end
+
+get "/members/:id" do
+    @member = Member.find(params[:id].to_i)
+    erb (:"members/show")
+end

@@ -1,0 +1,10 @@
+<p>First Name: <%= @member.first_name %> </p>
+<p>Last Name: <%= @member.last_name %></p>
+
+<form method="post" action ="/members/<%= @member.id %>/delete">
+  <button type="submit" value="Delete Member">Delete Member</button>
+</form>
+
+<form method="get" action ="/members/<%= @member.id %>/update">
+  <button type="submit" value="Update Member">Update Member</button>
+</form>
