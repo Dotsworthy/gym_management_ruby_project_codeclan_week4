@@ -1,0 +1,13 @@
+<h1>Bookings</h1>
+<nav>
+  <a href="bookings/new">Create Booking</a>
+</nav>
+<% for booking in @bookings %>
+
+  <ul>
+    <li><a href="/bookings/<%= booking.id%>"> Booking id: <%= booking.id %></a>
+    <li><a href="/bookings/<%= booking.id%>"> Member: <%= booking.member_id %></a>
+    <li><a href="/bookings/<%= booking.id%>"> Booking: <%= booking.session_id %></a>
+  </ul>
+
+<% end %>

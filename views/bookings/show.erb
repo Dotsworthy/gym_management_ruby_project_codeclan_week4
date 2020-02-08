@@ -1,0 +1,11 @@
+<p>Booking id: <%= @booking.id %> </p>
+<p>Member id: <%= @booking.member_id %> </p>
+<p>Session id: <%= @booking.session_id %></p>
+
+<form method="post" action ="/bookings/<%= @booking.id %>/delete">
+  <button type="submit" value="Delete Booking">Delete Booking</button>
+</form>
+
+<form method="get" action ="/bookings/<%= @booking.id %>/update">
+  <button type="submit" value="Update Booking">Update Booking</button>
+</form>
