@@ -10,36 +10,50 @@ Session.delete_all()
 # Members
 member1 = Member.new({
   "first_name" => "Dwayne",
-  "last_name" => "Johnson"
+  "last_name" => "Johnson",
+  "alias" => "The Rock",
+  "image_url" => "/public/images/1"
   })
 member1.save()
 
 member2 = Member.new({
   "first_name" => "Steve",
-  "last_name" => "Austin"
+  "last_name" => "Austin",
+  "alias" => "Stone Cold",
+  "image_url" => "/public/images/2"
   })
 member2.save()
 
 member3 = Member.new({
   "first_name" => "Paul",
-  "last_name" => "Lavesque"
+  "last_name" => "Lavesque",
+  "alias" => "Triple H",
+  "image_url" => "/public/images/3"
   })
 member3.save()
 
 member4 = Member.new({
   "first_name" => "Shawn",
-  "last_name" => "Michaels"
+  "last_name" => "Michaels",
+  "alias" => "/public/images/4",
+  "image_url" => "/public/images/4"
   })
 member4.save()
 
 # Sessions
 session1 = Session.new({
-  "name" => "Suplexes"
+  "type" => "Suplexes",
+  "starts_at" => "09:00",
+  "duration" => "1",
+  "capacity" => "3"
   })
 session1.save()
 
 session2 = Session.new({
-  "name" => "Elbow Drops"
+  "type" => "Elbow Drops",
+  "starts_at" => "10:00",
+  "duration" => "1",
+  "capacity" => "2"
   })
 session2.save()
 

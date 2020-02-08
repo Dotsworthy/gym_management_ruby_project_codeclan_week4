@@ -8,20 +8,24 @@ class Member
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
+    @alias = options['alias']
+    @image_url = options['image_url']
   end
 
   def save()
     sql = "INSERT INTO members
       (
       first_name,
-      last_name
+      last_name,
+      alias,
+      image_url
       )
       VALUES
       (
-        $1, $2
+        $1, $2, $3, $4
       )
       RETURNING id"
-    values = [@first_name, @last_name]
+    values = [@first_name, @last_name, @alias, @image_url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -30,13 +34,15 @@ class Member
     sql = "
       UPDATE members SET (
       first_name,
-      last_name
+      last_name,
+      alias,
+      image_url
       ) =
       (
-      $1, $2
+      $1, $2, $3, $4
       )
-      WHERE id = $3"
-    values = [@first_name, @last_name, @id]
+      WHERE id = $5"
+    values = [@first_name, @last_name, @alias, @image_url, @id]
     SqlRunner.run(sql,values)
   end
 
