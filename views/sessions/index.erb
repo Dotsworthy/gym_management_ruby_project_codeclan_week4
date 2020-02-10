@@ -3,7 +3,7 @@
   <a href="sessions/new">Create Session</a>
 </nav>
 <% for session in @sessions %>
-
+<div>
   <ul>
     <li><a href="/sessions/<%= session.id%>"> <%= session.type %></a>
     <li><a href="/sessions/<%= session.id%>"> <%= session.starts_at %></a>
@@ -11,5 +11,5 @@
     <li><a href="/sessions/<%= session.id%>"> <%= session.duration %></a>
     <li><a href="/sessions/<%= session.id%>"> <%= session.capacity %></a>
   </ul>
-
+</div>
 <% end %>

@@ -12,7 +12,7 @@ member1 = Member.new({
   "first_name" => "Dwayne",
   "last_name" => "Johnson",
   "alias" => "The Rock",
-  "image_url" => "/public/images/1"
+  "image_url" => "/images/1"
   })
 member1.save()
 
@@ -20,7 +20,7 @@ member2 = Member.new({
   "first_name" => "Steve",
   "last_name" => "Austin",
   "alias" => "Stone Cold",
-  "image_url" => "/public/images/2"
+  "image_url" => "/images/2"
   })
 member2.save()
 
@@ -28,15 +28,15 @@ member3 = Member.new({
   "first_name" => "Paul",
   "last_name" => "Lavesque",
   "alias" => "Triple H",
-  "image_url" => "/public/images/3"
+  "image_url" => "/images/3"
   })
 member3.save()
 
 member4 = Member.new({
   "first_name" => "Shawn",
   "last_name" => "Michaels",
-  "alias" => "/public/images/4",
-  "image_url" => "/public/images/4"
+  "alias" => "The Heartbreak Kid",
+  "image_url" => "/images/4"
   })
 member4.save()
 

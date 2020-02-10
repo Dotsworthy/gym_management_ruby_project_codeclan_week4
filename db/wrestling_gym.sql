@@ -13,6 +13,13 @@ CREATE TABLE members (
   image_url VARCHAR (255)
 );
 
+-- CREATE TABLE trainers (
+--   id SERIAL PRIMARY KEY,
+--   first_name VARCHAR (255),
+--   last_name VARCHAR (255),
+--   specialism VARCHAR (255)
+-- );
+
 CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
   type VARCHAR (255),
@@ -26,13 +33,6 @@ CREATE TABLE sessions (
 --   id SERIAL PRIMARY KEY,
 --   name VARCHAR (255),
 --   equipment_needed VARCHAR (255)
--- );
-
--- CREATE TABLE trainers (
---   id SERIAL PRIMARY KEY,
---   first_name VARCHAR (255),
---   last_name VARCHAR (255),
---   specialism VARCHAR (255)
 -- );
 
 -- CREATE TABLE rooms (

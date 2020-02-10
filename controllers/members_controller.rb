@@ -15,7 +15,7 @@ post "/members" do
 end
 
 get "/members/new" do
-  erb (:"members/new")
+  erb(:"members/new")
 end
 
 post "/members/:id" do
@@ -36,5 +36,5 @@ end
 
 get "/members/:id" do
     @member = Member.find(params[:id].to_i)
-    erb (:"members/show")
+    erb(:"members/show")
 end

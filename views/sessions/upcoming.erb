@@ -1,13 +1,23 @@
 <h1>Upcoming Sessions</h1>
 <nav>
+  by Day:
+  <a href="/sessions/filtered-by-day/monday">Monday</a>
+  <a href="/sessions/filtered-by-day/tuesday">Tuesday</a>
+  <a href="/sessions/filtered-by-day/wednesday">Wednesday</a>
+  <a href="/sessions/filtered-by-day/thursday">Thursday</a>
+  <a href="/sessions/filtered-by-day/friday">Friday</a>
+  <a href="/sessions/filtered-by-day/saturday">Saturday</a>
+  <a href="/sessions/filtered-by-day/sunday">Sunday</a>
+
   <a href="sessions/new">Create Session</a>
 </nav>
+<p>
+<br>
 <% for session in @sessions %>
-  <ul>
-    <li><a href="/sessions/<%= session.id%>"> <%= session.type %></a>
-    <li><a href="/sessions/<%= session.id%>"> <%= session.starts_at %></a>
-    <li><a href="/sessions/<%= session.id%>"> <%= session.on_date %></a>
-    <li><a href="/sessions/<%= session.id%>"> <%= session.duration %></a>
-    <li><a href="/sessions/<%= session.id%>"> <%= session.capacity %></a>
-  </ul>
+<a href="/sessions/<%= session.id%>"> <%= session.starts_at %></a>
+<%= Date.parse(session.on_date).strftime('%A') %>
+ -
+<%= session.type %>
+<br>
 <% end %>
+</p>

@@ -2,22 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <title>Welcome to Jim's Gym</title>
+
   </head>
+  <body>
   <nav>
+    <a href="/">Home</a>
     <a href="/members">Member List</a>
     <a href="/sessions">Session List</a>
     <a href="/bookings">Bookings List</a>
     <a href="/sessions/upcoming">Upcoming Sessions</a>
-    <a href="/sessions/filtered-by-day/monday">Monday Sessions</a>
-    <!-- <a href="/sessions/upcoming">Upcoming Sessions</a>
-    <a href="/sessions/upcoming">Upcoming Sessions</a>
-    <a href="/sessions/upcoming">Upcoming Sessions</a>
-    <a href="/sessions/upcoming">Upcoming Sessions</a>
-    <a href="/sessions/upcoming">Upcoming Sessions</a>
-    <a href="/sessions/upcoming">Upcoming Sessions</a> -->
   </nav>
-  <body>
     <%= yield %>
   </body>
 </html>

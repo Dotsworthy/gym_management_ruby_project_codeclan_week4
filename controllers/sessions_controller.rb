@@ -6,7 +6,7 @@ require_relative('../models/booking.rb')
 
 get "/sessions" do
   @sessions = Session.all()
-  erb(:"sessions/index")
+  erb(:"sessions/upcoming")
 end
 
 post "/sessions" do
@@ -54,5 +54,5 @@ end
 
 get "/sessions/filtered-by-day/:day" do
   @sessions = Session.find_all_for_day_of_week(params[:day])
-  erb(:"sessions/index")
+  erb(:"sessions/upcoming")
 end

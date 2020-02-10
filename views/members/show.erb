@@ -1,6 +1,8 @@
 <p>First Name: <%= @member.first_name %> </p>
 <p>Last Name: <%= @member.last_name %></p>
 
+<img src="<%=@member.image_url%>.jpg" class="thumbnail" alt="Man">
+
 <form method="post" action ="/members/<%= @member.id %>/delete">
   <button type="submit" value="Delete Member">Delete Member</button>
 </form>
