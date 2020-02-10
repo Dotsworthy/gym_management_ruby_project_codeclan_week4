@@ -51,6 +51,15 @@ class Session
     SqlRunner.run(sql,values)
   end
 
+  def date_check()
+    time = Time.parse("#{@on_date} #{@starts_at}")
+    if time < Time.now
+      return false
+    else
+      return true
+    end
+  end
+
   def self.delete(id)
     sql = "DELETE FROM sessions WHERE id = $1"
     values = [id]
@@ -82,13 +91,12 @@ class Session
     return results.map { |booking| Booking.new(booking) }
   end
 
-  def date_check()
-    time = Time.parse("#{@on_date} #{@starts_at}")
-    if time < Time.now
-      return false
-    else
-      return true
-    end
+  def self.available_sessions()
+    sql = "SELECT * FROM sessions"
+    values = SqlRunner.run(sql)
+    sessions = values.map { |session| Session.new(session)}
+    return result = sessions.map { |session| session if session.date_check == true}
   end
+
 
 end
