@@ -1,4 +1,6 @@
+require('date')
 require_relative( '../db/sql_runner' )
+
 
 class Session
 
@@ -78,5 +80,14 @@ class Session
     values = [id]
     results = SqlRunner.run(sql, values)
     return results.map { |booking| Booking.new(booking) }
+  end
+
+  def date_check()
+    date = Date.parse(@on_date)
+    if date < DateTime.now
+      return false
+    else
+      return true
+    end
   end
 end

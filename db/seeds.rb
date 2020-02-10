@@ -44,7 +44,7 @@ member4.save()
 session1 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "09:00",
-  "on_date" => "2020-02-12",
+  "on_date" => "2020-02-09",
   "duration" => "1",
   "capacity" => "3"
   })
