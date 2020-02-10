@@ -17,6 +17,7 @@ CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
   type VARCHAR (255),
   starts_at VARCHAR (255),
+  on_date DATE,
   duration VARCHAR (255),
   capacity INT
 );
