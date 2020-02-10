@@ -5,7 +5,7 @@
 <p>Member id: <%= @booking.member_id %> </p>
 <p>Member name: <%= member.pretty_name %></p>
 <p>Session id: <%= @booking.session_id %></p>
-<p>Session name: <%= session.name %></p>
+<p>Session name: <%= session.type %></p>
 
 <form method="post" action ="/bookings/<%= @booking.id %>/delete">
   <button type="submit" value="Delete Booking">Delete Booking</button>
