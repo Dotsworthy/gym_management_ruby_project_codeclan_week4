@@ -87,16 +87,12 @@ class Session
     result = SqlRunner.run(sql, values)
     return Session.new(result.first)
   end
-
+  #
   def find_members_signed_up()
-    
-  end
-
-  def self.find_bookings(id)
-    sql = "SELECT bookings.* FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE sessions.id = $1"
-    values = [id]
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.session_id = $1"
+    values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.map { |booking| Booking.new(booking) }
+    return results.map { |member| Member.new(member) }
   end
 
   def self.available_sessions()

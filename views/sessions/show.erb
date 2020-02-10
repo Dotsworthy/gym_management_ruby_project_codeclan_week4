@@ -15,3 +15,14 @@
 <form method="get" action ="/sessions/<%= @session.id %>/update">
   <button type="submit" value="Update session">Update Session</button>
 </form>
+
+<h1> Members in Session</h1>
+
+<p>
+<% for member in @members_signed_up %>
+  <ul>
+    <li><a href="/members/<%= member.id%>"> <%= member.pretty_name %> </a>
+  </ul>
+
+<% end %>
+</p>

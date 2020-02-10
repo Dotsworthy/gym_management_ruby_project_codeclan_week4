@@ -32,6 +32,7 @@ end
 
 get "/sessions/:id" do
   @session = Session.find(params[:id].to_i)
+  @members_signed_up = @session.find_members_signed_up()
   erb(:"sessions/show")
 end
 
