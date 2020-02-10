@@ -1,4 +1,5 @@
 require('time')
+require('pry-byebug')
 require_relative( '../db/sql_runner' )
 
 
@@ -53,11 +54,14 @@ class Session
 
   def date_check()
     time = Time.parse("#{@on_date} #{@starts_at}")
-    if time < Time.now
-      return false
-    else
-      return true
-    end
+    return time > Time.now
+    # if time < Time.now
+    #   return false
+  end
+
+  def self.find_all_for_day_of_week(day)
+    sessions = Session.all()
+    return sessions.filter {|session| Date.parse(session.on_date).strftime('%A').downcase() == day}
   end
 
   def self.delete(id)
@@ -84,8 +88,12 @@ class Session
     return Session.new(result.first)
   end
 
+  def find_members_signed_up()
+    
+  end
+
   def self.find_bookings(id)
-    sql = "SELECT * FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE sessions.id = $1"
+    sql = "SELECT bookings.* FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE sessions.id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return results.map { |booking| Booking.new(booking) }
@@ -94,9 +102,7 @@ class Session
   def self.available_sessions()
     sql = "SELECT * FROM sessions"
     values = SqlRunner.run(sql)
-    sessions = values.map { |session| Session.new(session)}
-    return result = sessions.map { |session| session if session.date_check == true}
+    all_sessions = values.map { |session| Session.new(session)}
+    return result = all_sessions.filter { |session| session.date_check}
   end
-
-
 end

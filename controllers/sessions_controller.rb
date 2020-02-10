@@ -3,7 +3,6 @@ require( 'sinatra/contrib/all' )
 require_relative('../models/member.rb')
 require_relative('../models/session.rb')
 require_relative('../models/booking.rb')
-also_reload( '../models/*' )
 
 get "/sessions" do
   @sessions = Session.all()
@@ -17,7 +16,7 @@ post "/sessions" do
 end
 
 get "/sessions/new" do
-  erb (:"sessions/new")
+  erb(:"sessions/new")
 end
 
 post "/sessions/:id" do
@@ -26,9 +25,14 @@ post "/sessions/:id" do
   redirect to("/sessions")
 end
 
+get "/sessions/upcoming" do
+  @sessions = Session.available_sessions()
+  erb(:"sessions/upcoming")
+end
+
 get "/sessions/:id" do
   @session = Session.find(params[:id].to_i)
-  erb (:"sessions/show")
+  erb(:"sessions/show")
 end
 
 post "/sessions/:id/delete" do
@@ -38,11 +42,16 @@ end
 
 get "/sessions/:id/update" do
   @session = Session.find(params[:id].to_i)
-  erb (:"sessions/edit")
+  erb(:"sessions/edit")
 end
 
 get "/sessions/:id/bookings" do
   @session = Session.find(params[:id].to_i)
   @bookings = Session.find_bookings(params[:id].to_i)
-  erb (:"sessions/bookings")
+  erb(:"sessions/bookings")
+end
+
+get "/sessions/filtered-by-day/:day" do
+  @sessions = Session.find_all_for_day_of_week(params[:day])
+  erb(:"sessions/index")
 end

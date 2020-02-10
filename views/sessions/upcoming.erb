@@ -1,0 +1,13 @@
+<h1>Upcoming Sessions</h1>
+<nav>
+  <a href="sessions/new">Create Session</a>
+</nav>
+<% for session in @sessions %>
+  <ul>
+    <li><a href="/sessions/<%= session.id%>"> <%= session.type %></a>
+    <li><a href="/sessions/<%= session.id%>"> <%= session.starts_at %></a>
+    <li><a href="/sessions/<%= session.id%>"> <%= session.on_date %></a>
+    <li><a href="/sessions/<%= session.id%>"> <%= session.duration %></a>
+    <li><a href="/sessions/<%= session.id%>"> <%= session.capacity %></a>
+  </ul>
+<% end %>

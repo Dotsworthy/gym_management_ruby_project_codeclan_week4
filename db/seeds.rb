@@ -68,6 +68,15 @@ session3 = Session.new({
   })
 session3.save()
 
+session4 = Session.new({
+  "type" => "Mic Work",
+  "starts_at" => "10:00",
+  "on_date" => "2020-02-08",
+  "duration" => "1",
+  "capacity" => "2"
+  })
+session4.save()
+
 # Bookings
 booking1 = Booking.new({
   "member_id" => member1.id,
