@@ -5,7 +5,17 @@ require_relative('../models/session.rb')
 require_relative('../models/booking.rb')
 
 get "/sessions" do
+  @sessions = Session.available_sessions()
+  erb(:"sessions/index")
+end
+
+get "/sessions/all" do
   @sessions = Session.all()
+  erb(:"sessions/index")
+end
+
+get "/sessions/past" do
+
   erb(:"sessions/index")
 end
 
