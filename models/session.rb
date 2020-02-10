@@ -55,12 +55,15 @@ class Session
   def date_check()
     time = Time.parse("#{@on_date} #{@starts_at}")
     return time > Time.now
-    # if time < Time.now
-    #   return false
   end
 
   def self.find_all_for_day_of_week(day)
     sessions = Session.all()
+    return sessions.filter {|session| Date.parse(session.on_date).strftime('%A').downcase() == day}
+  end
+
+  def self.find_upcoming_for_day_of_week(day)
+    sessions = Session.available_sessions()
     return sessions.filter {|session| Date.parse(session.on_date).strftime('%A').downcase() == day}
   end
 
@@ -100,5 +103,12 @@ class Session
     values = SqlRunner.run(sql)
     all_sessions = values.map { |session| Session.new(session)}
     return result = all_sessions.filter { |session| session.date_check}
+  end
+
+  def self.past_sessions()
+    sql = "SELECT * FROM sessions"
+    values = SqlRunner.run(sql)
+    all_sessions = values.map { |session| Session.new(session)}
+    return result = all_sessions.reject { |session| session.date_check}
   end
 end

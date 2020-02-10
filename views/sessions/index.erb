@@ -7,6 +7,7 @@
 </nav>
 <nav>
   by Day:
+  <br>
   <a href="/sessions/filtered-by-day/monday">Monday</a>
   <a href="/sessions/filtered-by-day/tuesday">Tuesday</a>
   <a href="/sessions/filtered-by-day/wednesday">Wednesday</a>
@@ -19,7 +20,10 @@
 <br>
 <% for session in @sessions %>
 <a href="/sessions/<%= session.id%>"> <%= session.starts_at %></a>
-<%= Date.parse(session.on_date).strftime('%A') %>
+<%= Date.parse(session.on_date).strftime('%A')%>
+
+<%= Date.parse(session.on_date).strftime('%d').to_i %>th
+<%= Date.parse(session.on_date).strftime('%b')%>
  -
 <%= session.type %>
 <br>

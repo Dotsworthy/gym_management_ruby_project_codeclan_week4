@@ -15,7 +15,7 @@ get "/sessions/all" do
 end
 
 get "/sessions/past" do
-
+  @sessions = Session.past_sessions()
   erb(:"sessions/index")
 end
 
@@ -63,6 +63,6 @@ get "/sessions/:id/bookings" do
 end
 
 get "/sessions/filtered-by-day/:day" do
-  @sessions = Session.find_all_for_day_of_week(params[:day])
+  @sessions = Session.find_upcoming_for_day_of_week(params[:day])
   erb(:"sessions/index")
 end
