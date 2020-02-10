@@ -2,12 +2,13 @@ require_relative( '../db/sql_runner' )
 
 class Session
 
-  attr_reader :id, :type, :starts_at, :duration, :capacity
+  attr_reader :id, :type, :starts_at, :on_date, :duration, :capacity
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @type = options['type']
     @starts_at = options['starts_at']
+    @on_date = options['on_date']
     @duration = options['duration']
     @capacity = options['capacity']
   end
@@ -17,15 +18,16 @@ class Session
       (
       type,
       starts_at,
+      on_date,
       duration,
       capacity
       )
       VALUES
       (
-        $1, $2, $3, $4
+        $1, $2, $3, $4, $5
       )
       RETURNING id"
-    values = [@type, @starts_at, @duration, @capacity]
+    values = [@type, @starts_at, @on_date, @duration, @capacity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -35,14 +37,15 @@ class Session
       UPDATE sessions SET (
       type,
       starts_at,
+      on_date,
       duration,
       capacity
       )
       = (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
       )
-      WHERE id = $5"
-    values = [@type, @starts_at, @duration, @capacity, @id]
+      WHERE id = $6"
+    values = [@type, @starts_at, @on_date, @duration, @capacity, @id]
     SqlRunner.run(sql,values)
   end
 

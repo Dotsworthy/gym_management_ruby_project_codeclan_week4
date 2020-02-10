@@ -44,6 +44,7 @@ member4.save()
 session1 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "09:00",
+  "on_date" => "2020-02-12",
   "duration" => "1",
   "capacity" => "3"
   })
@@ -52,6 +53,7 @@ session1.save()
 session2 = Session.new({
   "type" => "Elbow Drops",
   "starts_at" => "10:00",
+  "on_date" => "2020-02-14",
   "duration" => "1",
   "capacity" => "2"
   })
