@@ -52,7 +52,7 @@ session1.save()
 
 session2 = Session.new({
   "type" => "Suplexes",
-  "starts_at" => "14:00",
+  "starts_at" => "21:00",
   "on_date" => "2020-02-10",
   "duration" => "1",
   "capacity" => "3"

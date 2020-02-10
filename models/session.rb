@@ -1,4 +1,3 @@
-require('date')
 require('time')
 require_relative( '../db/sql_runner' )
 
@@ -84,14 +83,12 @@ class Session
   end
 
   def date_check()
-    date = Date.parse(@on_date)
-    time = Time.parse(@on_date, @starts_at)
-    if date < DateTime.now
-      return false
-    elsif time < Time.now
+    time = Time.parse("#{@on_date} #{@starts_at}")
+    if time < Time.now
       return false
     else
       return true
     end
   end
+
 end
