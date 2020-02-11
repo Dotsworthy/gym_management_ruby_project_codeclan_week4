@@ -1,0 +1,12 @@
+<p>First Name: <%= @trainer.first_name %> </p>
+<p>Last Name: <%= @trainer.last_name %></p>
+
+<img src="<%=@trainer.image_url%>.jpg" class="thumbnail" alt="Man">
+
+<form method="post" action ="/trainers/<%= @trainer.id %>/delete">
+  <button type="submit" value="Delete Trainer">Delete Trainer</button>
+</form>
+
+<form method="get" action ="/trainers/<%= @trainer.id %>/update">
+  <button type="submit" value="Update Trainer">Update Trainer</button>
+</form>
