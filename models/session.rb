@@ -49,8 +49,8 @@ class Session
       = (
       $1, $2, $3, $4, $5, $6
       )
-      WHERE id = $6"
-    values = [@type, @starts_at, @on_date, @duration, @capacity, @id]
+      WHERE id = $7"
+    values = [@type, @starts_at, @on_date, @duration, @led_by, @capacity, @id]
     SqlRunner.run(sql,values)
   end
 
