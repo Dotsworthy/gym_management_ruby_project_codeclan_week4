@@ -57,7 +57,8 @@ end
 
 get "/sessions/:id/update" do
   @session = Session.find(params[:id].to_i)
-  @trainers = Trainer.all()
+  @trainers= Trainer.all()
+  @trainer = @session.find_trainer()
   erb(:"sessions/edit")
 end
 

@@ -2,19 +2,19 @@
 
   <label for = "type">Session Type:</label>
     <input id= "type" type="test" name="type"/>
-
+<br>
   <label for = "starts at">Starts at:</label>
     <input id= "starts at" type="time" name="starts_at"/>
-
+<br>
   <label for = "date">Date:</label>
     <input id= "date" type="date" name="on_date"/>
-
+<br>
   <label for = "duration">Duration:</label>
     <input id= "duration" type="number" name="duration"/>
-
+<br>
   <label for = "capacity">Capacity:</label>
     <input id= "capacity" type="number" name="capacity"/>
-
+<br>
   <label for = "capacity">Trainer:</label>
     <select id="trainer" name="led_by">
   <% @trainers.each do |trainer| %>
@@ -22,9 +22,9 @@
   <%=trainer.pretty_name()%> </option>
   <% end %>
 </select>
-
 <br>
 Recurring sessions:
+<br>
 <label for = "recurring">Number of weeks to repeat:</label>
   <input id= "recurring" type="number" name="recurring" min="0"/>
 
