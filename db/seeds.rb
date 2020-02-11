@@ -4,8 +4,10 @@ require_relative( "../models/booking.rb" )
 require("pry-byebug")
 
 Booking.delete_all()
-Member.delete_all()
 Session.delete_all()
+Member.delete_all()
+Trainer.delete_all()
+
 
 # Members
 member1 = Member.new({
@@ -40,11 +42,37 @@ member4 = Member.new({
   })
 member4.save()
 
+trainer1 = Trainer.new({
+  "first_name" => "Randy",
+  "last_name" => "Savage",
+  "alias" => "Macho Man",
+  "image_url" => "/images/5"
+  })
+trainer1.save()
+
+trainer2 = Trainer.new({
+  "first_name" => "Ric",
+  "last_name" => "Flair",
+  "alias" => "Nature Boy",
+  "image_url" => "/images/6"
+  })
+trainer2.save()
+
+trainer3 = Trainer.new({
+  "first_name" => "Hulk",
+  "last_name" => "Hogan",
+  "alias" => "Hulkamaniac",
+  "image_url" => "/images/7"
+  })
+trainer3.save()
+
+
 # Sessions
 session1 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "09:00",
   "on_date" => "2020-02-10",
+  "led_by" => trainer3.id,
   "duration" => "1",
   "capacity" => "3"
   })
@@ -54,6 +82,7 @@ session2 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "21:00",
   "on_date" => "2020-02-10",
+  "led_by" => trainer2.id,
   "duration" => "1",
   "capacity" => "3"
   })
@@ -63,6 +92,7 @@ session3 = Session.new({
   "type" => "Elbow Drops",
   "starts_at" => "10:00",
   "on_date" => "2020-02-14",
+  "led_by" => trainer1.id,
   "duration" => "1",
   "capacity" => "2"
   })
@@ -72,6 +102,7 @@ session4 = Session.new({
   "type" => "Mic Work",
   "starts_at" => "10:00",
   "on_date" => "2020-02-08",
+  "led_by" => trainer2.id,
   "duration" => "1",
   "capacity" => "2"
   })

@@ -1,7 +1,7 @@
 DROP TABLE bookings;
 DROP TABLE members;
-DROP TABLE trainers;
 DROP TABLE sessions;
+DROP TABLE trainers;
 -- DROP TABLE session_types;
 
 -- DROP TABLE rooms;
@@ -18,7 +18,8 @@ CREATE TABLE trainers (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR (255),
   last_name VARCHAR (255),
-  specialism VARCHAR (255)
+  alias VARCHAR (255),
+  image_url VARCHAR (255)
 );
 
 CREATE TABLE sessions (
