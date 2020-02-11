@@ -15,4 +15,13 @@
   <label for = "capacity">Capacity:</label>
     <input id= "capacity" type="number" name="capacity" value= "<%= @session.capacity %>"/>
 
+    <label for = "capacity">Trainer:</label>
+      <select id="trainer" name="led_by">
+      <option value="<%= @session.led_by %>" selected>
+    <% @trainers.each do |trainer| %>
+    <option value= "<%= trainer.id()%>" >
+    <%=trainer.pretty_name()%> </option>
+    <% end %>
+  </select>
+
   <input type="submit" value="Update Session"/>

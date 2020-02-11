@@ -26,6 +26,7 @@ post "/sessions" do
 end
 
 get "/sessions/new" do
+  @trainers = Trainer.all()
   erb(:"sessions/new")
 end
 
@@ -53,6 +54,7 @@ end
 
 get "/sessions/:id/update" do
   @session = Session.find(params[:id].to_i)
+  @trainers = Trainer.all()
   erb(:"sessions/edit")
 end
 

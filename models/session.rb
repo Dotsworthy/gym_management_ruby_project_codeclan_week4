@@ -11,6 +11,7 @@ class Session
     @type = options['type']
     @starts_at = options['starts_at']
     @on_date = options['on_date']
+    @led_by = options['led_by']
     @duration = options['duration']
     @capacity = options['capacity']
   end
@@ -22,14 +23,15 @@ class Session
       starts_at,
       on_date,
       duration,
+      led_by,
       capacity
       )
       VALUES
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
       RETURNING id"
-    values = [@type, @starts_at, @on_date, @duration, @capacity]
+    values = [@type, @starts_at, @on_date, @duration, @led_by, @capacity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -41,10 +43,11 @@ class Session
       starts_at,
       on_date,
       duration,
+      led_by,
       capacity
       )
       = (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
       )
       WHERE id = $6"
     values = [@type, @starts_at, @on_date, @duration, @capacity, @id]
