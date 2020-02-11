@@ -1,10 +1,13 @@
 require('time')
+require('date')
+require('pry-byebug')
 require_relative( '../db/sql_runner' )
 
 
 class Session
 
-  attr_reader :id, :type, :starts_at, :on_date, :duration, :led_by, :capacity
+  attr_reader :id, :type, :starts_at, :duration, :led_by, :capacity
+  attr_accessor :on_date
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -34,6 +37,18 @@ class Session
     values = [@type, @starts_at, @on_date, @duration, @led_by, @capacity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def self.multiple_weeks(session, weeks)
+    repeating_session = Session.find(session.id)
+    counter = weeks
+    while counter > 0
+      new_date = Date.parse(repeating_session.on_date)
+      new_date += 7
+      repeating_session.on_date = new_date.to_s()
+      repeating_session.save()
+      counter -= 1
+    end
   end
 
   def update()
@@ -113,4 +128,5 @@ class Session
     all_sessions = values.map { |session| Session.new(session)}
     return result = all_sessions.reject { |session| session.date_check}
   end
+
 end
