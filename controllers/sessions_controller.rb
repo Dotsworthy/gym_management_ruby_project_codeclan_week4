@@ -17,7 +17,7 @@ end
 
 get "/sessions/past" do
   @sessions = Session.past_sessions()
-  erb(:"sessions/index")
+  erb(:"sessions/past")
 end
 
 post "/sessions" do
