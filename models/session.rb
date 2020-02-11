@@ -77,8 +77,8 @@ class Session
   def find_trainer()
     sql = "Select * From trainers INNER JOIN sessions on sessions.led_by = trainers.id WHERE sessions.id = $1"
     values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map { |trainer| Trainer.new(trainer) }
+    result = SqlRunner.run(sql, values)
+    return Trainer.new(result.first)
   end
 
   def self.find_all_for_day_of_week(day)

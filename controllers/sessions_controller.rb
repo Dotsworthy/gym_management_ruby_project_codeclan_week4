@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 require_relative('../models/member.rb')
 require_relative('../models/session.rb')
 require_relative('../models/booking.rb')
+require_relative('../models/trainer.rb')
 
 get "/sessions" do
   @sessions = Session.available_sessions()
@@ -44,6 +45,7 @@ end
 
 get "/sessions/:id" do
   @session = Session.find(params[:id].to_i)
+  @trainer = @session.find_trainer()
   @members_signed_up = @session.find_members_signed_up()
   erb(:"sessions/show")
 end

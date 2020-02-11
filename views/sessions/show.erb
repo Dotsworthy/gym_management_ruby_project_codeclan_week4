@@ -1,14 +1,3 @@
-<p>Type: <%= @session.type %> </p>
-<p>Starts_at: <%= @session.starts_at %> </p>
-<p>Date: <%= @session.on_date %> </p>
-<p>Duration: <%= @session.duration %> hour </p>
-<p>Led By: <%=@session.led_by %></p>
-<p>Capacity <%= @session.capacity %> </p>
-
-<form method="get" action ="/sessions/<%= @session.id %>/bookings">
-  <button type="submit" value="Show Bookings">Show Bookings</button>
-</form>
-
 <form method="post" action ="/sessions/<%= @session.id %>/delete">
   <button type="submit" value="Delete Session">Delete Session</button>
 </form>
@@ -16,6 +5,13 @@
 <form method="get" action ="/sessions/<%= @session.id %>/update">
   <button type="submit" value="Update session">Update Session</button>
 </form>
+
+<p>Type: <%= @session.type %> </p>
+<p>Starts_at: <%= @session.starts_at %> </p>
+<p>Date: <%= @session.on_date %> </p>
+<p>Duration: <%= @session.duration %> hour </p>
+<p>Led By: <%= @trainer.pretty_name() %></p>
+<p>Capacity <%= @session.capacity %> </p>
 
 <h1> Members in Session</h1>
 
