@@ -1,8 +1,9 @@
 DROP TABLE bookings;
 DROP TABLE members;
+DROP TABLE trainers;
 DROP TABLE sessions;
 -- DROP TABLE session_types;
--- DROP TABLE trainers;
+
 -- DROP TABLE rooms;
 
 CREATE TABLE members (
@@ -13,18 +14,19 @@ CREATE TABLE members (
   image_url VARCHAR (255)
 );
 
--- CREATE TABLE trainers (
---   id SERIAL PRIMARY KEY,
---   first_name VARCHAR (255),
---   last_name VARCHAR (255),
---   specialism VARCHAR (255)
--- );
+CREATE TABLE trainers (
+  id SERIAL PRIMARY KEY,
+  first_name VARCHAR (255),
+  last_name VARCHAR (255),
+  specialism VARCHAR (255)
+);
 
 CREATE TABLE sessions (
   id SERIAL PRIMARY KEY,
   type VARCHAR (255),
   starts_at VARCHAR (255),
   on_date DATE,
+  led_by INT REFERENCES trainers(id) ON DELETE CASCADE,
   duration VARCHAR (255),
   capacity INT
 );

@@ -1,23 +1,24 @@
 <h1>Sessions List</h1>
-<nav>
-  <a href="sessions/new">Create New Session</a>
-  <a href="/sessions/upcoming">Upcoming Sessions</a>
-  <a href="/sessions/past">Past Sessions</a>
-  <a href="/sessions/all">All Sessions</a>
-</nav>
-<nav>
-  by Day:
-  <br>
-  <a href="/sessions/filtered-by-day/monday">Monday</a>
-  <a href="/sessions/filtered-by-day/tuesday">Tuesday</a>
-  <a href="/sessions/filtered-by-day/wednesday">Wednesday</a>
-  <a href="/sessions/filtered-by-day/thursday">Thursday</a>
-  <a href="/sessions/filtered-by-day/friday">Friday</a>
-  <a href="/sessions/filtered-by-day/saturday">Saturday</a>
-  <a href="/sessions/filtered-by-day/sunday">Sunday</a>
-</nav>
+<div class="navbar>"
+  <nav>
+    <a href="sessions/new">Create New Session</a>
+    <a href="/sessions/upcoming">Upcoming Sessions</a>
+    <a href="/sessions/past">Past Sessions</a>
+    <a href="/sessions/all">All Sessions</a>
+  </nav>
+  <nav>
+    by Day:
+    <br>
+    <a href="/sessions/filtered-by-day/monday">Monday</a>
+    <a href="/sessions/filtered-by-day/tuesday">Tuesday</a>
+    <a href="/sessions/filtered-by-day/wednesday">Wednesday</a>
+    <a href="/sessions/filtered-by-day/thursday">Thursday</a>
+    <a href="/sessions/filtered-by-day/friday">Friday</a>
+    <a href="/sessions/filtered-by-day/saturday">Saturday</a>
+    <a href="/sessions/filtered-by-day/sunday">Sunday</a>
+  </nav>
+</div>
 <p>
-<br>
 <% for session in @sessions %>
 <a href="/sessions/<%= session.id%>"> <%= session.starts_at %></a>
 <%= Date.parse(session.on_date).strftime('%A')%>

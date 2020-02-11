@@ -1,6 +1,27 @@
+div.title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 100px;
+  /* margin: 0;
+  padding: 0px; */
+  background-color: #009FFD;
+}
+
+div.navbar a:link {
+  background-color: #FFD700;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+div.navbar {
+  padding-top: 5px;
+}
 
 body {
-  background-color: dodgerblue;
+  background-color: #F5F5F5;
+  height: 100%
 }
 
 
@@ -14,6 +35,14 @@ img.thumbnail {
 	width: 250px;
 	height: 200px;
 }
+
+img.logo {
+  width: 100px;
+  height: auto;
+  font-size: 10px;
+}
+
+
 
 nav {
   font-family: 'Noto Sans KR', sans-serif;

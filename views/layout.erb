@@ -4,16 +4,23 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     <title>Welcome to Jim's Gym</title>
-
   </head>
   <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/members">Member List</a>
-    <a href="/sessions">Session List</a>
-    <a href="/bookings">Bookings List</a>
-  </nav>
+    <div class="title">
+      Jim's Gym
+      <img src="images/wrestler.png" class="logo" alt="Where did I go? :(">
+    </div>
+    <div class="navbar">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/members">Member List</a>
+      <a href="/sessions">Session List</a>
+      <a href="/bookings">Bookings List</a>
+    </nav>
+
+  </div>
     <%= yield %>
   </body>
 </html>
