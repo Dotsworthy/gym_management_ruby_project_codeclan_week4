@@ -8,11 +8,13 @@
     <title>Welcome to Jim's Gym</title>
   </head>
   <body>
-    <div class="title">
-      Jim's Gym
-      <img src="images/wrestler.png" class="logo" alt="Where did I go? :(">
-    </div>
-    <div class="navbar">
+
+  <div class="title-container">
+    Jim's Gym
+    <img src="/images/wrestler.png" class="logo" alt="Where did I go? :(">
+  </div>
+
+  <div class="nav-container">
     <nav>
       <a href="/">Home</a>
       <a href="/members">Member List</a>
@@ -20,8 +22,10 @@
       <a href="/sessions">Session List</a>
       <a href="/bookings">Bookings List</a>
     </nav>
-
   </div>
+
+  <div class="body-container">
     <%= yield %>
+  </div>
   </body>
 </html>

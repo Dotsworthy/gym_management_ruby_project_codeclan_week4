@@ -1,50 +1,66 @@
-div.title {
+.title-container {
   font-family: 'Fredoka One', cursive;
-  font-size: 100px;
-  /* margin: 0;
-  padding: 0px; */
+  font-size: 50px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding-bottom: 5px;
+  position: fixed;
   background-color: #009FFD;
+}
+
+img.logo {
+  width: 50px;
+  height: auto;
+  font-size: 10px;
+  padding-top: 10px;
+}
+
+.nav-container {
+  padding-top: 90px;
+
+}
+.nav-container a:link {
+  left: 0;
+  position: fixed;
+  background-color: #FFD700;
+  color: black;
+  position: relative;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 div.navbar a:link {
   background-color: #FFD700;
   color: black;
+  position: relative;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
 }
 
-div.navbar {
-  padding-top: 5px;
+.body-container {
+  position: relative;
+  padding-top: 0px;
 }
-
-
 body {
   background-color: #F5F5F5;
-  height: 100%
 }
 
 
 img {
 	max-width: 100%;
-  max-height: 100%;
+  max-height: auto%;
 	}
 
 img.thumbnail {
 
 	width: 250px;
 	height: 200px;
-}
-
-img.logo {
-  width: 100px;
-  height: auto;
-  font-size: 10px;
-}
-
-nav {
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 h1 {
