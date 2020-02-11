@@ -31,6 +31,19 @@ class Trainer
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM trainers"
+    results = SqlRunner.run(sql)
+    return results.map { |trainer| Trainer.new(trainer) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM trainers WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Trainer.new(result.first)
+  end
+
   def self.delete(id)
     sql = "DELETE FROM trainers WHERE id = $1"
     values = [id]
