@@ -2,6 +2,7 @@
 <p>Starts_at: <%= @session.starts_at %> </p>
 <p>Date: <%= @session.on_date %> </p>
 <p>Duration: <%= @session.duration %> hour </p>
+<p>Led By: <%=@session.led_by %></p>
 <p>Capacity <%= @session.capacity %> </p>
 
 <form method="get" action ="/sessions/<%= @session.id %>/bookings">

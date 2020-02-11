@@ -74,5 +74,4 @@ class Trainer
     sql = "DELETE FROM trainers"
     SqlRunner.run( sql )
   end
-
 end
