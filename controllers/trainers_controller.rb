@@ -9,6 +9,16 @@ get "/trainers" do
   erb (:"trainers/index")
 end
 
+post "/trainers" do
+  trainer = Trainer.new(params)
+  trainer.save()
+  redirect to("/trainers")
+end
+
+get "/trainers/new" do
+  erb(:"trainers/new")
+end
+
 get "/trainers/:id" do
     @trainer = Trainer.find(params[:id].to_i)
     erb(:"trainers/show")
