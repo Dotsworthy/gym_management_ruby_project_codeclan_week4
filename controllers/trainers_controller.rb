@@ -19,6 +19,17 @@ get "/trainers/new" do
   erb(:"trainers/new")
 end
 
+post "/trainers/:id" do
+  trainer = Trainer.new(params)
+  trainer.update()
+  redirect to("/trainers")
+end
+
+get "/trainers/:id/update" do
+  @trainer = Trainer.find(params[:id].to_i)
+  erb (:"trainers/edit")
+end
+
 get "/trainers/:id" do
     @trainer = Trainer.find(params[:id].to_i)
     erb(:"trainers/show")
