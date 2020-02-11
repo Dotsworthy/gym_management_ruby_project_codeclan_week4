@@ -47,6 +47,9 @@ class Trainer
     SqlRunner.run(sql,values)
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
 
   def self.all()
     sql = "SELECT * FROM trainers"

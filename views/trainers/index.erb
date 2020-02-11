@@ -1,0 +1,11 @@
+<h1>Gym Trainers</h1>
+<nav>
+  <a href="trainers/new">Add Trainer</a>
+</nav>
+<% for trainer in @trainers %>
+
+  <ul>
+    <li><a href="/trainers/<%= trainer.id%>"> <%= trainer.pretty_name %></a>
+  </ul>
+
+<% end %>
