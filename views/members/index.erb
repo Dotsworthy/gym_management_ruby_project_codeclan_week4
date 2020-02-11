@@ -1,11 +1,11 @@
 <h1>Gym Members</h1>
 <nav>
-  <a href="members/new">Create Member</a>
+  <a href="members/new">Add New Member</a>
 </nav>
 <% for member in @members %>
 
   <ul>
-    <li><a href="/members/<%= member.id%>"> <%= member.pretty_name %></a>
+    <li><a href="/members/<%= member.id%>"> "<%= member.alias %>" <%= member.pretty_name %></a>
   </ul>
 
 <% end %>

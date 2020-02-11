@@ -19,6 +19,7 @@ div.navbar {
   padding-top: 5px;
 }
 
+
 body {
   background-color: #F5F5F5;
   height: 100%
@@ -41,8 +42,6 @@ img.logo {
   height: auto;
   font-size: 10px;
 }
-
-
 
 nav {
   font-family: 'Noto Sans KR', sans-serif;

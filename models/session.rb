@@ -40,14 +40,14 @@ class Session
   end
 
   def self.multiple_weeks(session, weeks)
+    return if weeks < 0
     repeating_session = Session.find(session.id)
-    counter = weeks
-    while counter > 0
+    while weeks > 0
       new_date = Date.parse(repeating_session.on_date)
       new_date += 7
       repeating_session.on_date = new_date.to_s()
       repeating_session.save()
-      counter -= 1
+      weeks -= 1
     end
   end
 

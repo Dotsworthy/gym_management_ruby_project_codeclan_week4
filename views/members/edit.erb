@@ -1,8 +1,11 @@
 <form method = "post" action ="/members/<%= @member.id %>">
   <label for = "first-name">First Name:</label>
     <input id= "first-name" type="test" name="first_name" value= "<%= @member.first_name %>"/>
-
+<br>
   <label for= "last-name">Last Name:</label>
     <input id= "last-name" type="text" name="last_name" value= "<%= @member.last_name %>"/>
-
+<br>
+  <label for= "alias">Alias:</label>
+    <input id= "alias" type="text" name="alias" value= "<%= @member.alias %>"/>
+<br>
   <input type="submit" value="Update Member"/>

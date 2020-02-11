@@ -1,8 +1,3 @@
-<p>First Name: <%= @member.first_name %> </p>
-<p>Last Name: <%= @member.last_name %></p>
-
-<img src="<%=@member.image_url%>.jpg" class="thumbnail" alt="Man">
-
 <form method="post" action ="/members/<%= @member.id %>/delete">
   <button type="submit" value="Delete Member">Delete Member</button>
 </form>
@@ -10,3 +5,14 @@
 <form method="get" action ="/members/<%= @member.id %>/update">
   <button type="submit" value="Update Member">Update Member</button>
 </form>
+
+<div class="member-container">
+  <div>
+<p>First Name: <%= @member.first_name %> </p>
+<p>Last Name: <%= @member.last_name %></p>
+<p>Alias: <%= @member.alias %></p>
+  </div>
+  <div>
+    <img class="profile" src="<%=@member.image_url%>.jpg" class="thumbnail" alt="Man">
+  </div>
+</div>

@@ -5,7 +5,7 @@
 <% for trainer in @trainers %>
 
   <ul>
-    <li><a href="/trainers/<%= trainer.id%>"> <%= trainer.pretty_name %></a>
+    <li><a href="/trainers/<%= trainer.id%>"> "<%= trainer.alias %>" <%= trainer.pretty_name %></a>
   </ul>
 
 <% end %>

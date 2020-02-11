@@ -22,6 +22,7 @@ end
 post "/sessions" do
   session = Session.new(params)
   session.save()
+  Session.multiple_weeks(session, params[:recurring].to_i)
   redirect to("/sessions")
 end
 
