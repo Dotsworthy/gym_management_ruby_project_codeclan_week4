@@ -6,13 +6,7 @@
   <button type="submit" value="Update Member">Update Member</button>
 </form>
 
-<div class="member-container">
-  <div>
 <p>First Name: <%= @member.first_name %> </p>
 <p>Last Name: <%= @member.last_name %></p>
 <p>Alias: <%= @member.alias %></p>
-  </div>
-  <div>
-    <img class="profile" src="<%=@member.image_url%>.jpg" class="thumbnail" alt="Man">
-  </div>
-</div>
+<img class="profile" src="<%=@member.image_url%>.jpg" class="thumbnail" alt="Man">

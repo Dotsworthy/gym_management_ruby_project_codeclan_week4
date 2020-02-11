@@ -74,6 +74,13 @@ class Session
     return time > Time.now
   end
 
+  def find_trainer()
+    sql = "Select * From trainers INNER JOIN sessions on sessions.led_by = trainers.id WHERE sessions.id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |trainer| Trainer.new(trainer) }
+  end
+
   def self.find_all_for_day_of_week(day)
     sessions = Session.all()
     return sessions.filter {|session| Date.parse(session.on_date).strftime('%A').downcase() == day}
