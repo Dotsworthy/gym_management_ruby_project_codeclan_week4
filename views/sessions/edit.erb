@@ -9,12 +9,6 @@
   <label for = "date">Date:</label>
     <input id= "date" type="date" name="on_date" value= "<%= @session.on_date %>"/>
 <br>
-  <label for = "duration">Duration:</label>
-    <input id= "duration" type="number" name="duration" value= "<%= @session.duration %>"/>
-<br>
-  <label for = "capacity">Capacity:</label>
-    <input id= "capacity" type="number" name="capacity" value= "<%= @session.capacity %>"/>
-<br>
     <label for = "capacity">Trainer:</label>
       <select id="trainer" name="led_by">
       <option value="<% @session.led_by %>"selected disabled hidden> <%= @trainer.pretty_name() %></option>
