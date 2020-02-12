@@ -1,12 +1,15 @@
-<form method="post" action ="/members/<%= @member.id %>/delete">
-  <button type="submit" value="Delete Member">Delete Member</button>
+<p>
+  <form method="post" action ="/members/<%= @member.id %>/delete">
+  <button class="delete" type="submit" value="Delete Member">Delete Member</button>
 </form>
 
 <form method="get" action ="/members/<%= @member.id %>/update">
-  <button type="submit" value="Update Member">Update Member</button>
+  <button class="update" type="submit" value="Update Member">Update Member</button>
 </form>
-
-<p>First Name: <%= @member.first_name %> </p>
-<p>Last Name: <%= @member.last_name %></p>
-<p>Alias: <%= @member.alias %></p>
+<br>
+<br>
+Name: <%= @member.pretty_name %>
+<br>
+Alias: <%= @member.alias %>
+<p/>
 <img class="profile" src="<%=@member.image_url%>.jpg" class="thumbnail" alt="Man">

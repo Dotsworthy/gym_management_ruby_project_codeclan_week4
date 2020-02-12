@@ -1,3 +1,4 @@
+<p>
 <form method = "post" action ="/sessions">
 
   <label for = "type">Session Type:</label>
@@ -20,6 +21,7 @@
 Recurring sessions:
 <br>
 <label for = "recurring">Number of weeks to repeat:</label>
-  <input id= "recurring" type="number" name="recurring" min="0"/>
+  <input id= "recurring" type="number" name="recurring" min="0" max="52" value="0"/>
 
-  <input type="submit" value="Add Session"/>
+  <input class="new" type="submit" value="Add Session"/>
+</p>

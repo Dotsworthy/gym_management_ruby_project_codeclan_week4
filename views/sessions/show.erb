@@ -1,13 +1,14 @@
+<p>
 <form method="post" action ="/sessions/<%= @session.id %>/delete">
-  <button type="submit" value="Delete Session">Delete Session</button>
+  <button class="delete" type="submit" value="Delete Session">Delete Session</button>
 </form>
 
 <form method="get" action ="/sessions/<%= @session.id %>/update">
-  <button type="submit" value="Update session">Update Session</button>
+  <button class="update" type="submit" value="Update session">Update Session</button>
 </form>
 
 <p>Type: <%= @session.type %> </p>
-<p>Starts_at: <%= @session.starts_at %> </p>
+<p>Starts at: <%= @session.starts_at %> </p>
 <p>Date: <%= @session.on_date %> </p>
 <p>Led By: <%= @trainer.pretty_name() %></p>
 
@@ -20,4 +21,3 @@
   </ul>
 
 <% end %>
-</p>
