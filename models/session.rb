@@ -6,7 +6,7 @@ require_relative( '../db/sql_runner' )
 
 class Session
 
-  attr_reader :id, :type, :starts_at, :duration, :led_by, :capacity
+  attr_reader :id, :type, :starts_at, :led_by
   attr_accessor :on_date
 
   def initialize(options)
@@ -15,8 +15,6 @@ class Session
     @starts_at = options['starts_at']
     @on_date = options['on_date']
     @led_by = options['led_by']
-    @duration = options['duration']
-    @capacity = options['capacity']
   end
 
   def save()
@@ -25,16 +23,14 @@ class Session
       type,
       starts_at,
       on_date,
-      duration,
-      led_by,
-      capacity
+      led_by
       )
       VALUES
       (
-        $1, $2, $3, $4, $5, $6
+        $1, $2, $3, $4
       )
       RETURNING id"
-    values = [@type, @starts_at, @on_date, @duration, @led_by, @capacity]
+    values = [@type, @starts_at, @on_date, @led_by]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -57,15 +53,13 @@ class Session
       type,
       starts_at,
       on_date,
-      duration,
-      led_by,
-      capacity
+      led_by
       )
       = (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4
       )
-      WHERE id = $7"
-    values = [@type, @starts_at, @on_date, @duration, @led_by, @capacity, @id]
+      WHERE id = $5"
+    values = [@type, @starts_at, @on_date, @led_by, @id]
     SqlRunner.run(sql,values)
   end
 

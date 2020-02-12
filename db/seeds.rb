@@ -72,9 +72,7 @@ session1 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "09:00",
   "on_date" => "2020-02-17",
-  "led_by" => trainer3.id,
-  "duration" => "1",
-  "capacity" => "3"
+  "led_by" => trainer3.id
   })
 session1.save()
 
@@ -82,9 +80,7 @@ session2 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "21:00",
   "on_date" => "2020-02-18",
-  "led_by" => trainer2.id,
-  "duration" => "1",
-  "capacity" => "3"
+  "led_by" => trainer2.id
   })
 session2.save()
 
@@ -92,9 +88,7 @@ session3 = Session.new({
   "type" => "Elbow Drops",
   "starts_at" => "10:00",
   "on_date" => "2020-02-19",
-  "led_by" => trainer1.id,
-  "duration" => "1",
-  "capacity" => "2"
+  "led_by" => trainer1.id
   })
 session3.save()
 
@@ -102,9 +96,7 @@ session4 = Session.new({
   "type" => "Mic Work",
   "starts_at" => "10:00",
   "on_date" => "2020-02-20",
-  "led_by" => trainer2.id,
-  "duration" => "1",
-  "capacity" => "2"
+  "led_by" => trainer2.id
   })
 session4.save()
 
@@ -112,9 +104,7 @@ session5 = Session.new({
   "type" => "Submissions",
   "starts_at" => "10:00",
   "on_date" => "2020-02-21",
-  "led_by" => trainer1.id,
-  "duration" => "1",
-  "capacity" => "2"
+  "led_by" => trainer1.id
   })
 session5.save()
 
@@ -122,9 +112,7 @@ session6 = Session.new({
   "type" => "Leg Drops",
   "starts_at" => "10:00",
   "on_date" => "2020-02-22",
-  "led_by" => trainer3.id,
-  "duration" => "1",
-  "capacity" => "2"
+  "led_by" => trainer3.id
   })
 session6.save()
 
@@ -132,9 +120,7 @@ session7 = Session.new({
   "type" => "Taunting",
   "starts_at" => "10:00",
   "on_date" => "2020-02-23",
-  "led_by" => trainer2.id,
-  "duration" => "1",
-  "capacity" => "2"
+  "led_by" => trainer2.id
   })
 session7.save()
 
@@ -142,9 +128,7 @@ session8 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "10:00",
   "on_date" => "2020-02-10",
-  "led_by" => trainer1.id,
-  "duration" => "1",
-  "capacity" => "2"
+  "led_by" => trainer1.id
   })
 session8.save()
 
