@@ -7,7 +7,7 @@
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  position: fixed;
+  position: absolute;
   background-color: #009B72;
   text-align: center;
 }
@@ -31,7 +31,7 @@ img.logo {
   background-color: #2A2D34;
   width: 100%;
   left: 0;
-  position: fixed;
+  position: absolute;
   font-family: 'Noto Sans KR', sans-serif;
 
 }
@@ -52,10 +52,11 @@ img.logo {
 }
 
 .body-container {
-  position: fixed;
-  margin-top: 135px;
+  position: absolute;
+  margin-top: 140px;
   font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
+
 }
 
 .body-container ul {
