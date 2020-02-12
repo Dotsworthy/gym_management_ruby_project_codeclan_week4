@@ -1,6 +1,6 @@
 <h1>Bookings</h1>
 <nav>
-  <a href="bookings/new">Create Booking</a>
+  <a class="button" href="bookings/new">Create Booking</a>
 </nav>
 <% for booking in @bookings %>
 <% member = Member.find(booking.member_id) %>
