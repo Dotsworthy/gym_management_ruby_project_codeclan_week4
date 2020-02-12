@@ -118,7 +118,7 @@ img.logo {
 }
 
 input.new {
- background-color: green;
+ background-color: #009B72;
  color: white;
  margin-top: 5px;
 }
@@ -152,7 +152,7 @@ img.profile {
 }
 
 body {
-  background-color: #A5AE9E;
+  background-color: #7D98A1;
 }
 img {
 	max-width: 100%;
