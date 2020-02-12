@@ -34,7 +34,6 @@ post "/bookings/:id/delete" do
   redirect to ("/bookings")
 end
 
-
 get "/bookings/:id" do
   @booking = Booking.find(params[:id].to_i)
   erb (:"bookings/show")

@@ -35,18 +35,6 @@ class Session
     @id = results.first()['id'].to_i
   end
 
-  def self.multiple_weeks(session, weeks)
-    return if weeks < 0
-    repeating_session = Session.find(session.id)
-    while weeks > 0
-      new_date = Date.parse(repeating_session.on_date)
-      new_date += 7
-      repeating_session.on_date = new_date.to_s()
-      repeating_session.save()
-      weeks -= 1
-    end
-  end
-
   def update()
     sql = "
       UPDATE sessions SET (
@@ -130,4 +118,15 @@ class Session
     return result = all_sessions.reject { |session| session.date_check}
   end
 
+  def self.multiple_weeks(session, weeks)
+    return if weeks < 0
+    repeating_session = Session.find(session.id)
+    while weeks > 0
+      new_date = Date.parse(repeating_session.on_date)
+      new_date += 7
+      repeating_session.on_date = new_date.to_s()
+      repeating_session.save()
+      weeks -= 1
+    end
+  end
 end
