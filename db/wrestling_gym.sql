@@ -24,6 +24,7 @@ CREATE TABLE sessions (
   type VARCHAR (255),
   starts_at VARCHAR (255),
   on_date DATE,
+  num_of_places, INT
   led_by INT REFERENCES trainers(id) ON DELETE CASCADE
 );
 
