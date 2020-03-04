@@ -185,6 +185,15 @@ button.delete {
   margin-top: 25px;
 }
 
+.credit-container {
+  font-family: 'Fredoka One';
+  color: white;
+  top: 95%;
+  left: 90%;
+  font-size: 10px;
+  position: absolute;
+}
+
 img.profile {
   width: 225px;
   height: 300px;
