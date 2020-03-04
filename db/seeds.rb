@@ -140,7 +140,6 @@ session8 = Session.new({
   })
 session8.save()
 
-
 # Bookings
 booking1 = Booking.new({
   "member_id" => member1.id,

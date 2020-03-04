@@ -1,59 +1,71 @@
-.title-container {
+.title {
   font-family: 'Fredoka One', cursive;
-  font-size: 50px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position: absolute;
+  font-size: 25px;
   background-color: #009B72;
   text-align: center;
+  transform: skewY(-11deg);
+  border: 3px solid black;
+  border-left: none;
+  border-right: none;
+  top: 12%;
+  bottom: 5%;
+  left: 0px;
+  right: 0px;
+  position: fixed;
 }
 
-.title-container div.1 {
-  padding: 0;
-  top: 0;
-  left: 10px;
+.title-logo {
+  display: inline-flex;
+}
 
+.title-text {
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  transform: skewY(-11deg);
+  border: 3px solid black;
+  top: 11%;
+  left: 50px;
+  position: fixed;
+}
+
+.title-button {
+  top: 450px;
+  left: 20%;
+  position: fixed;
 }
 
 img.logo {
-  width: 50px;
-  height: auto;
+  width: auto;
+  height: 50px;
   font-size: 10px;
   margin-top: 10px;
+  transform: skewy(0deg);
 }
 
 .nav-container {
-  margin-top: 100px;
-  background-color: #2A2D34;
   width: 100%;
-  left: 0;
-  position: absolute;
+  padding: 25px;
   font-family: 'Noto Sans KR', sans-serif;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 
 }
-.nav-container a:link {
-  left: 0;
-  position: fixed;
+.nav-container a.nav:link {
   color: white;
-  position: relative;
-  padding: 12px 24px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-.nav-container a:visited {
+.nav-container a.nav:visited {
  color: white;
 }
 
 .body-container {
   position: absolute;
-  margin-top: 140px;
+  top: 50px;
   font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
 
@@ -118,6 +130,8 @@ img.logo {
   font-size: 16px;
 }
 
+
+
 input.new {
  background-color: #009B72;
  color: white;
@@ -132,14 +146,33 @@ button.delete {
   background-color: #9B2915; /* Green */
 }
 
-.body-container a {
+.body-container a.text {
   color: black;
 }
 
-.body-container a:link {
+.body-container a.text:link {
   text-decoration: none;
 }
-.body-container a:visited {
+.body-container a.text:visited {
+  color: black;
+}
+
+.body-container a.index {
+  background-color: #9B2915; /* Green */
+  border: 2px solid black;
+  color: white;
+  padding: 35px 72px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-grid;
+  font-size: 16px;
+}
+
+.body-container a.index:link {
+  text-decoration: none;
+}
+.body-container a.index:visited {
   color: black;
 }
 
@@ -153,7 +186,7 @@ img.profile {
 }
 
 body {
-  background-color: #7D98A1;
+  background-color: #2A2D34;
 }
 img {
 	max-width: 100%;

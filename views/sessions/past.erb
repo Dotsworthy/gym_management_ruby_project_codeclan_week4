@@ -1,7 +1,7 @@
 <h1>Past Sessions</h1>
 <p>
 <% for session in @sessions %>
-<a href="/sessions/<%= session.id%>">
+<a class="text" href="/sessions/<%= session.id%>">
 <%= session.starts_at %>
  -
 <%= Date.parse(session.on_date).strftime('%A')%>

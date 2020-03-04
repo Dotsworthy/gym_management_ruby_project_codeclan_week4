@@ -17,7 +17,7 @@
 <p>
 <% for member in @members_signed_up %>
   <ul>
-    <li><a href="/members/<%= member.id%>"> <%= member.pretty_name %> </a>
+    <li><a class="text" href="/members/<%= member.id%>"> <%= member.pretty_name %> </a>
   </ul>
 
 <% end %>
