@@ -1,17 +1,21 @@
-.title {
+.background-banner {
+  background-color: #009B72;
+  transform: skewY(-6deg);
+  margin-top: 5px;
+  top: 4%;
+  bottom: 4%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+}
+
+.title-content {
   font-family: 'Fredoka One', cursive;
   font-size: 25px;
-  background-color: #009B72;
   text-align: center;
-  transform: skewY(-11deg);
-  border: 3px solid black;
-  border-left: none;
-  border-right: none;
-  top: 12%;
-  bottom: 5%;
-  left: 0px;
-  right: 0px;
   position: fixed;
+  left: 33%;
+  top: 25%;
 }
 
 .title-logo {
@@ -44,17 +48,18 @@ img.logo {
 
 .nav-container {
   width: 100%;
-  padding: 25px;
+  padding: 5px;
   font-family: 'Noto Sans KR', sans-serif;
   display: inline-block;
-  position: absolute;
+  position: sticky;
   top: 0px;
   left: 0px;
-
 }
+
 .nav-container a.nav:link {
   color: white;
   text-align: center;
+  margin-right: 10px;
   text-decoration: none;
   font-family: 'Noto Sans KR', sans-serif;
 }
@@ -64,8 +69,8 @@ img.logo {
 }
 
 .body-container {
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  top: 10%;
   font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
 
@@ -78,8 +83,8 @@ img.logo {
 }
 
 .body-container a.button {
-  background-color: #009B72; /* Green */
-  border: none;
+  background-color: #9B2915; /* Green */
+  border: 2px solid black;
   color: white;
   padding: 10px 16px;
   text-align: center;
