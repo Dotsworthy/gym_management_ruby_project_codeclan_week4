@@ -12,7 +12,7 @@
 
 .background-banner {
   background-color: #009B72;
-  transform: skewY(-6deg);
+  transform: skewY(-11deg);
   margin: 0 auto;
   top: 4%;
   bottom: 4%;
@@ -23,11 +23,13 @@
 
 .title-content {
   font-family: 'Fredoka One', cursive;
-  font-size: 25px;
+  font-size: 2em;
+  font-size: 2vw;
+  font-size: 3vh;
   text-align: center;
-  position: fixed;
-  left: 33%;
-  top: 25%;
+  position: relative;
+  top: 200px;
+  left: 20px;
 }
 
 .title-logo {
@@ -47,7 +49,7 @@
 .title-button a {
   top: 60%;
   left: 42%;
-  position: fixed;
+  position: absolute;
   background-color: #9B2915; /* Green */
   border: 2px solid black;
   color: white;
@@ -57,16 +59,17 @@
   text-decoration: none;
   display: inline-grid;
   font-size: 16px;
+  font-size: 2vw;
+  font-size: 2vh;
   font-family: 'Noto Sans KR', sans-serif;
 
 }
 
 img.logo {
   width: auto;
-  height: 50px;
+  height: 75px;
   font-size: 10px;
   margin-top: 10px;
-  transform: skewy(0deg);
 }
 
 .nav-container {

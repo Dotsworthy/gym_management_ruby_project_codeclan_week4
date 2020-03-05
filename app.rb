@@ -11,5 +11,5 @@ get "/" do
 end
 
 get "/index" do
-  erb(:index, :layout => :layout)
+  erb(:index)
 end
