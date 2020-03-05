@@ -7,5 +7,9 @@ require_relative("controllers/trainers_controller")
 also_reload( '../models/*' )
 
 get "/" do
-  erb(:index)
+  erb(:landing_page, :layout => :layout_splash )
+end
+
+get "/index" do
+  erb(:index, :layout => :layout)
 end
