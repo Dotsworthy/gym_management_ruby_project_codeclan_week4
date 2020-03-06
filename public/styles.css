@@ -1,19 +1,31 @@
+.credit-container {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: white;
+  top: 95%;
+  left: 85%;
+  font-size: 10px;
+  position: fixed;
+}
+
 .body-container {
   position: fixed;
   top: 7%;
   left: 0%;
   font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
-  background-color: #009B72;
   width: 100%;
   height: 100%;
+  background-color: #009B72;
+}
 
+.body-content {
+  left: 2%;
+  position: relative;
 }
 
 .background-banner {
   background-color: #009B72;
   transform: skewY(-11deg);
-  margin: 0 auto;
   top: 4%;
   bottom: 4%;
   left: 0%;
@@ -32,35 +44,18 @@
   left: 20px;
 }
 
-.title-logo {
-  display: inline-flex;
-}
-
-.title-text {
-  font-family: 'Fredoka One', cursive;
-  text-align: center;
-  transform: skewY(-11deg);
-  border: 3px solid black;
-  top: 11%;
-  left: 50px;
-  position: fixed;
-}
-
 .title-button a {
-  top: 60%;
-  left: 42%;
-  position: absolute;
   background-color: #9B2915; /* Green */
   border: 2px solid black;
   color: white;
-  padding: 35px 72px;
-  margin-bottom: 20px;
+  padding: 1% 1%;
   text-align: center;
   text-decoration: none;
-  display: inline-grid;
   font-size: 16px;
   font-size: 2vw;
   font-size: 2vh;
+  position: relative;
+  top: 50px;
   font-family: 'Noto Sans KR', sans-serif;
 
 }
@@ -109,7 +104,6 @@ img.logo {
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
@@ -171,15 +165,15 @@ button.delete {
   background-color: #9B2915; /* Green */
 }
 
-.body-container a.text {
+.body-container a {
   color: black;
 }
 
-.body-container a.text:link {
+.body-container a:link {
   text-decoration: none;
 }
-.body-container a.text:visited {
-  color: black;
+.body-container a:visited {
+  text-decoration: none;
 }
 
 .body-container a.index {
@@ -205,14 +199,7 @@ button.delete {
   margin-top: 25px;
 }
 
-.credit-container {
-  font-family: 'Fredoka One';
-  color: white;
-  top: 95%;
-  left: 90%;
-  font-size: 10px;
-  position: absolute;
-}
+
 
 img.profile {
   width: 225px;

@@ -2,10 +2,7 @@
 <nav>
   <a class="button" href="trainers/new">Add Trainer</a>
 </nav>
+<br>
 <% for trainer in @trainers %>
-
-  <ul>
-    <li><a href="/trainers/<%= trainer.id%>"> "<%= trainer.alias %>" <%= trainer.pretty_name %></a>
-  </ul>
-
+<div><a href="/trainers/<%= trainer.id%>"> "<%= trainer.alias %>" <%= trainer.pretty_name %></a></div>
 <% end %>

@@ -1,8 +1,11 @@
 <h1>Gym Members</h1>
   <a class="button" href="members/new">Add New Member</a>
+<br>
+<br>
+<label for="">Search Member</label>
+<input type="text" name="" value="">
+<br>
+<br>
 <% for member in @members %>
-  <ul>
-    <li><a href="/members/<%= member.id%>"> "<%= member.alias %>" <%= member.pretty_name %></a>
-  </ul>
-
+<div> <a href="/members/<%= member.id%>"> "<%= member.alias %>" <%= member.pretty_name %></a> </div>
 <% end %>

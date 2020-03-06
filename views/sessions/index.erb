@@ -1,22 +1,16 @@
 <h1>Sessions List</h1>
-<div class="navbar>"
   <nav>
     <a class="button" href="/sessions/new">Add New Session</a>
     <a class="button" href="/sessions/upcoming">Upcoming Sessions</a>
     <a class="button" href="/sessions/past">Past Sessions</a>
   </nav>
-  <nav>
-    by Day:
-    <br>
-    <a class="button" href="/sessions/filtered-by-day/monday">Monday</a>
-    <a class="button" href="/sessions/filtered-by-day/tuesday">Tuesday</a>
-    <a class="button" href="/sessions/filtered-by-day/wednesday">Wednesday</a>
-    <a class="button" href="/sessions/filtered-by-day/thursday">Thursday</a>
-    <a class="button" href="/sessions/filtered-by-day/friday">Friday</a>
-    <a class="button" href="/sessions/filtered-by-day/saturday">Saturday</a>
-    <a class="button" href="/sessions/filtered-by-day/sunday">Sunday</a>
-  </nav>
-</div>
+
+<% time = Time.now%>
+<% year = time.strftime('%y').to_i() %>
+<% month = time.strftime('%m').to_i() %>
+<br>
+<%= calendar(:year => year, :month => month ) %>
+
 <p>
 <% for session in @sessions %>
 
