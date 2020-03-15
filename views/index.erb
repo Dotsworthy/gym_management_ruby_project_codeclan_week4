@@ -1,15 +1,26 @@
+
 <h1><%= day = Time.now.strftime('%A %d %B') %></h1>
-
-<div class="">
-  
-</div>
-
-
-<div class="button">
-
-<p>Quick Add:</p>
-<a class="index" href="/sessions/new">New Session</a>
-<a class="index" href="members/new">New Member</a>
-<a class="index" href="bookings/new">New Booking</a>
-
-</div>
+<div><h2><p>Quick Add:</p><h2></div>
+  <div class="index-button-wrapper">
+    <a class="index" href="/sessions/new">New Session</a>
+    <a class="index" href="members/new">New Member</a>
+    <a class="index" href="bookings/new">New Booking</a>
+  </div>
+  <div><h2>Today's Sessions</h2><div/>
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Type</th>
+      </tr>
+      <% for session in @sessions %>
+      <tr>
+        <td>
+          <%= session.starts_at %></td>
+          <td><%= Date.parse(session.on_date).strftime('%A')%>
+            <%= Date.parse(session.on_date).strftime('%d').to_i %>th
+            <%= Date.parse(session.on_date).strftime('%b')%></td>
+            <td><%= session.type %></td>
+            <% end %>
+          </tr>
+        </table>

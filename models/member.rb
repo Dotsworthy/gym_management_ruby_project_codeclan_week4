@@ -2,13 +2,13 @@ require_relative( '../db/sql_runner' )
 
 class Member
 
-  attr_reader :id, :first_name, :last_name, :alias, :image_url
+  attr_reader :id, :first_name, :last_name, :user_name, :image_url
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @alias = options['alias']
+    @user_name = options['user_name']
     @image_url = options['image_url']
   end
 
@@ -17,7 +17,7 @@ class Member
       (
       first_name,
       last_name,
-      alias,
+      user_name,
       image_url
       )
       VALUES
@@ -25,7 +25,7 @@ class Member
         $1, $2, $3, $4
       )
       RETURNING id"
-    values = [@first_name, @last_name, @alias, @image_url]
+    values = [@first_name, @last_name, @user_name, @image_url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -35,14 +35,14 @@ class Member
       UPDATE members SET (
       first_name,
       last_name,
-      alias,
+      user_name,
       image_url
       ) =
       (
       $1, $2, $3, $4
       )
       WHERE id = $5"
-    values = [@first_name, @last_name, @alias, @image_url, @id]
+    values = [@first_name, @last_name, @user_name, @image_url, @id]
     SqlRunner.run(sql,values)
   end
 

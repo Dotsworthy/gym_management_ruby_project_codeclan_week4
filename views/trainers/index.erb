@@ -4,5 +4,5 @@
 </nav>
 <br>
 <% for trainer in @trainers %>
-<div><a href="/trainers/<%= trainer.id%>"> "<%= trainer.alias %>" <%= trainer.pretty_name %></a></div>
+<div><a href="/trainers/<%= trainer.id%>"> "<%= trainer.user_name %>" <%= trainer.pretty_name %></a></div>
 <% end %>

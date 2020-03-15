@@ -6,26 +6,25 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     <title>Gym Champion</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/wrestler.png"/>
   </head>
   <body>
 
-  <div class="nav-container">
-    <nav>
-      <a class="nav" href="/">Home</a>
+  <nav>
+      <a class="nav" href="/index">Home</a>
       <a class="nav" href="/members">Member List</a>
       <a class="nav" href="/trainers">Trainer List</a>
       <a class="nav" href="/sessions">Session List</a>
       <a class="nav" href="/bookings">Bookings List</a>
-    </nav>
-  </div>
+  </nav>
 
-  <div>
-    <div class="body-container">
-      <div class="body-content">
+  <section class="body-content">
       <%= yield %>
-    </div>
-    <div class="credit-container">
+  </section>
+
+  <footer>
     A concept ruby app by Andrew Watson
-    </div>
+  </footer>
+
   </body>
 </html>

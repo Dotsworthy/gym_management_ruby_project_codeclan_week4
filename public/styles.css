@@ -1,4 +1,35 @@
-.credit-container {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #009B72;
+}
+
+nav {
+  width: 100%;
+  padding: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  display: inline-block;
+  position: sticky;
+  background-color: #2A2D34;
+}
+
+nav a.nav:link {
+  color: white;
+  text-align: center;
+  margin-right: 10px;
+  text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+nav a.nav:visited {
+ color: white;
+}
+
+footer {
   font-family: 'Noto Sans KR', sans-serif;
   color: white;
   top: 95%;
@@ -7,10 +38,18 @@
   position: fixed;
 }
 
-.body-container {
-  position: fixed;
-  top: 7%;
-  left: 0%;
+h1 {
+  font-size: 6vw;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+.body-content {
+  display: grid;
+  grid-template-columns: 50% 3fr;
+  left: 2%;
+  position: relative;
   font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
   width: 100%;
@@ -18,78 +57,35 @@
   background-color: #009B72;
 }
 
-.body-content {
-  left: 2%;
-  position: relative;
+.index-button-wrapper {
+  display: grid;
+  grid-row-start: 3;
+  padding: 10px;
+  align-items: center;
 }
 
-.background-banner {
-  background-color: #009B72;
-  transform: skewY(-11deg);
-  top: 4%;
-  bottom: 4%;
-  left: 0%;
-  right: 0%;
-  position: fixed;
+.body-content a {
+  color: black;
 }
 
-.title-content {
-  font-family: 'Fredoka One', cursive;
-  font-size: 2em;
-  font-size: 2vw;
-  font-size: 3vh;
-  text-align: center;
-  position: relative;
-  top: 200px;
-  left: 20px;
+.body-content a:link {
+  text-decoration: none;
+}
+.body-content a:visited {
+  text-decoration: none;
 }
 
-.title-button a {
+.index-button-wrapper a.index {
   background-color: #9B2915; /* Green */
   border: 2px solid black;
   color: white;
-  padding: 1% 1%;
+  margin: 5px;
+  padding: 35px 72px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  font-size: 2vw;
-  font-size: 2vh;
-  position: relative;
-  top: 50px;
-  font-family: 'Noto Sans KR', sans-serif;
-
+  width: 50%;
 }
-
-img.logo {
-  width: auto;
-  height: 75px;
-  font-size: 10px;
-  margin-top: 10px;
-}
-
-.nav-container {
-  width: 100%;
-  padding: 5px;
-  font-family: 'Noto Sans KR', sans-serif;
-  display: inline-block;
-  position: sticky;
-  top: 0px;
-  left: 0px;
-}
-
-.nav-container a.nav:link {
-  color: white;
-  text-align: center;
-  margin-right: 10px;
-  text-decoration: none;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-.nav-container a.nav:visited {
- color: white;
-}
-
-
 
 .body-container ul {
   list-style-type: none;
@@ -97,7 +93,7 @@ img.logo {
   padding: 0;
 }
 
-.body-container a.button {
+.body-content a.button {
   background-color: #9B2915; /* Green */
   border: 2px solid black;
   color: white;
@@ -165,29 +161,6 @@ button.delete {
   background-color: #9B2915; /* Green */
 }
 
-.body-container a {
-  color: black;
-}
-
-.body-container a:link {
-  text-decoration: none;
-}
-.body-container a:visited {
-  text-decoration: none;
-}
-
-.body-container a.index {
-  background-color: #9B2915; /* Green */
-  border: 2px solid black;
-  color: white;
-  padding: 35px 72px;
-  margin-bottom: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-grid;
-  font-size: 16px;
-}
-
 .body-container a.index:link {
   text-decoration: none;
 }
@@ -199,6 +172,14 @@ button.delete {
   margin-top: 25px;
 }
 
+.member-container {
+  display: flex;
+  flex-direction: row;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
 
 
 img.profile {
@@ -206,9 +187,6 @@ img.profile {
   height: 300px;
 }
 
-body {
-  background-color: #2A2D34;
-}
 img {
 	max-width: 100%;
   max-height: auto%;

@@ -19,5 +19,7 @@ get "/" do
 end
 
 get "/index" do
+  day = Time.now.strftime('%d')
+  @sessions = Session.find_all_for_day_of_week(day)
   erb(:index)
 end

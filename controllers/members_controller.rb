@@ -35,6 +35,7 @@ post "/members/:id/delete" do
 end
 
 get "/members/:id" do
+    @members = Member.all()
     @member = Member.find(params[:id].to_i)
     erb(:"members/show")
 end

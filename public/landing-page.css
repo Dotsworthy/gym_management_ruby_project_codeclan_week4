@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2A2D34;
+}
+
+footer {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: white;
+  top: 95%;
+  left: 85%;
+  font-size: 10px;
+  position: fixed;
+}
+
+img.logo {
+  width: auto;
+  height: 75px;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.landing-background-banner {
+  background-color: #009B72;
+  transform: skewY(-11deg);
+  top: 4%;
+  bottom: 4%;
+  left: 0%;
+  right: 0%;
+  position: fixed;
+  z-index: -1;
+}
+
+.landing-wrapper {
+  display: grid;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  position: absolute;
+  padding: 2vh;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0 0 -250px;
+}
+
+.landing-wrapper a {
+  background-color: #9B2915; /* Green */
+  border: 2px solid black;
+  color: white;
+  padding: 2vh;
+  text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}

@@ -21,7 +21,9 @@
   <%= Date.parse(session.on_date).strftime('%d').to_i %>th
   <%= Date.parse(session.on_date).strftime('%b')%>
  -
-  <%= session.type %></a>
+  <%= session.type %> with
+  <% trainer = session.find_trainer() %>
+  <%= trainer.pretty_name() %></a>
 <br>
 <% end %>
 </p>
