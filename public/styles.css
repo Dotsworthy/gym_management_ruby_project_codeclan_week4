@@ -124,7 +124,7 @@ footer {
   background-color: #9B2915; /* Green */
   border: 2px solid black;
   color: white;
-  padding: 10px 16px;
+  padding: 4px 8px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -172,7 +172,16 @@ footer {
   font-size: 16px;
 }
 
+.members-form-wrapper {
+  display: grid;
+  width: 90%;
+  padding-top: 16px;
+}
 
+.member-title-wrapper {
+  display: grid;
+  grid-template-columns: 14% 15%;
+}
 
 input.new {
  background-color: #009B72;
