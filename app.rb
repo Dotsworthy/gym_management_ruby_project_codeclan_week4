@@ -1,5 +1,6 @@
 require("sinatra")
 require("sinatra/contrib/all")
+require('Date')
 require_relative("controllers/bookings_controller")
 require_relative("controllers/members_controller")
 require_relative("controllers/sessions_controller")
@@ -19,7 +20,7 @@ get "/" do
 end
 
 get "/index" do
-  day = Time.now.strftime('%d')
+  day = Date.today.strftime('%d')
   @sessions = Session.find_all_for_day_of_week(day)
   erb(:index)
 end

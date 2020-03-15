@@ -68,7 +68,7 @@ class Session
 
   def self.find_all_for_day_of_week(day)
     sessions = Session.all()
-    return sessions.filter {|session| Date.parse(session.on_date).strftime('%A').downcase() == day}
+    return sessions.filter {|session| Date.parse(session.on_date).strftime('%d') == day}
   end
 
   def self.find_upcoming_for_day_of_week(day)

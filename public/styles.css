@@ -29,6 +29,38 @@ nav a.nav:visited {
  color: white;
 }
 
+h1 {
+  font-size: 6vw;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+table {
+    font-family: 'Poppins';
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th {
+  background-color: #3D195B;
+  color: white;
+  padding: 8px;
+}
+
+td {
+  padding: 8px;
+}
+
+tr {
+  background-color: white;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: #dddddd;
+}
+
 footer {
   font-family: 'Noto Sans KR', sans-serif;
   color: white;
@@ -37,13 +69,6 @@ footer {
   font-size: 10px;
   position: fixed;
 }
-
-h1 {
-  font-size: 6vw;
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
 
 .body-content {
   display: grid;

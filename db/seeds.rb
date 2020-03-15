@@ -3,7 +3,6 @@ require_relative("../models/trainer.rb")
 require_relative( "../models/session.rb" )
 require_relative( "../models/booking.rb" )
 require("pry-byebug")
-require 'time'
 
 
 Booking.delete_all()
@@ -11,7 +10,6 @@ Session.delete_all()
 Member.delete_all()
 Trainer.delete_all()
 
-today = Time.now()
 
 
 # Members
@@ -72,73 +70,81 @@ trainer3 = Trainer.new({
 trainer3.save()
 
 # Sessions
+day1 = Date.today()
 session1 = Session.new({
   "type" => "Suplexes",
   "starts_at" => "09:00",
-  "on_date" => "2020-03-14",
+  "on_date" => day1.strftime('%Y-%B-%d'),
   "led_by" => trainer3.id,
   "num_of_places" => "2"
   })
 session1.save()
 
+day2 = Date.today + 1
 session2 = Session.new({
   "type" => "Suplexes",
-  "starts_at" => "21:00",
-  "on_date" => "2020-03-15",
+  "starts_at" => "10:00",
+  "on_date" => day2.strftime('%Y-%B-%d'),
   "led_by" => trainer2.id,
   "num_of_places" => "2"
   })
 session2.save()
 
+day3 = Date.today + 2
 session3 = Session.new({
   "type" => "Elbow Drops",
-  "starts_at" => "10:00",
-  "on_date" => "2020-03-16",
+  "starts_at" => "11:00",
+  "on_date" => day3.strftime('%Y-%B-%d'),
   "led_by" => trainer1.id,
   "num_of_places" => "2"
   })
 session3.save()
 
+day4 = Date.today + 3
 session4 = Session.new({
   "type" => "Mic Work",
-  "starts_at" => "10:00",
-  "on_date" => "2020-03-17",
+  "starts_at" => "12:00",
+  "on_date" => day4.strftime('%Y-%B-%d'),
   "led_by" => trainer2.id,
   "num_of_places" => "2"
   })
 session4.save()
 
+day5 = Date.today + 4
 session5 = Session.new({
   "type" => "Submissions",
-  "starts_at" => "10:00",
-  "on_date" => "2020-03-18",
+  "starts_at" => "14:00",
+  "on_date" => day5.strftime('%Y-%B-%d'),
   "led_by" => trainer1.id,
   "num_of_places" => "2"
   })
 session5.save()
 
+day6 = Date.today + 5
 session6 = Session.new({
   "type" => "Leg Drops",
-  "starts_at" => "10:00",
-  "on_date" => "2020-03-19",
+  "starts_at" => "15:00",
+  "on_date" => day6.strftime('%Y-%B-%d'),
   "led_by" => trainer3.id,
   "num_of_places" => "2"
   })
 session6.save()
 
+day7 = Date.today + 6
 session7 = Session.new({
   "type" => "Taunting",
-  "starts_at" => "10:00",
-  "on_date" => "2020-03-20",
+  "starts_at" => "16:00",
+  "on_date" => day7.strftime('%Y-%B-%d'),
   "led_by" => trainer2.id,
   "num_of_places" => "2"
   })
 session7.save()
 
+day8 = Date.today + 7
 session8 = Session.new({
   "type" => "Suplexes",
-  "starts_at" => "10:00",
-  "on_date" => "2020-03-14",
+  "starts_at" => "17:00",
+  "on_date" => day8.strftime('%Y-%B-%d'),
   "led_by" => trainer1.id,
   "num_of_places" => "2"
   })

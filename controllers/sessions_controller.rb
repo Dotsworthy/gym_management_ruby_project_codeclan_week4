@@ -38,9 +38,9 @@ post "/sessions/:id" do
   redirect to("/sessions")
 end
 
-get "index" do
-  @sessions = Session.available_sessions()
-end
+# get "index" do
+#   @sessions = Session.available_sessions()
+# end
 
 get "/sessions/upcoming" do
   @sessions = Session.available_sessions()
