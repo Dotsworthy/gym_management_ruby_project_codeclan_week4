@@ -173,14 +173,15 @@ footer {
 }
 
 .members-form-wrapper {
-  display: grid;
+  display: flex;
   width: 90%;
+  height: 50px;
   padding-top: 16px;
 }
 
 .member-title-wrapper {
-  display: grid;
-  grid-template-columns: 14% 15%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 input.new {
@@ -211,6 +212,16 @@ button.delete {
 .member-container {
   display: flex;
   flex-direction: row;
+}
+
+.search-bar {
+  width: 200px;
+  border: 2px black;
+}
+
+.search-image {
+  height: 90%;
+  margin-left: 5px;
 }
 
 table, th, td {
