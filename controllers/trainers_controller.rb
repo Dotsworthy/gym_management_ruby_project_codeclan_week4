@@ -25,6 +25,12 @@ post "/trainers/:id" do
   redirect to("/trainers")
 end
 
+post "/trainers/:id/delete" do
+  Trainer.delete(params[:id])
+  redirect to ("/trainers")
+end
+
+
 get "/trainers/:id/update" do
   @trainer = Trainer.find(params[:id].to_i)
   erb (:"trainers/edit")
