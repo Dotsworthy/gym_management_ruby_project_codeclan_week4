@@ -39,3 +39,8 @@ get "/members/:id" do
     @member = Member.find(params[:id].to_i)
     erb(:"members/show")
 end
+
+get "members/filtered-by-search/?search=:params" do
+  @members = Member.search[:params]
+  erb(:"members/index")
+end
