@@ -260,6 +260,13 @@ button.delete {
   margin: 2px;
 }
 
+.session-list {
+  display: grid;
+}
+
+.calendar{
+}
+
 form {
   display: grid;
 }

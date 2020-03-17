@@ -1,29 +1,34 @@
 <h1>Sessions List</h1>
-  <nav>
-    <a class="button" href="/sessions/new">Add New Session</a>
-    <a class="button" href="/sessions/upcoming">Upcoming Sessions</a>
-    <a class="button" href="/sessions/past">Past Sessions</a>
-  </nav>
-
-<% time = Time.now%>
-<% year = time.strftime('%y').to_i() %>
-<% month = time.strftime('%m').to_i() %>
-<br>
-<%= calendar(:year => year, :month => month ) %>
-
-<p>
-<% for session in @sessions %>
-
-<a href="/sessions/<%= session.id%>">
-  <%= session.starts_at %>
- -
-  <%= Date.parse(session.on_date).strftime('%A')%>
-  <%= Date.parse(session.on_date).strftime('%d').to_i %>th
-  <%= Date.parse(session.on_date).strftime('%b')%>
- -
-  <%= session.type %> with
-  <% trainer = session.find_trainer() %>
-  <%= trainer.pretty_name() %></a>
-<br>
-<% end %>
-</p>
+<div></div>
+<div class="member-title-wrapper">
+  <a class="button" href="/sessions/new">Add New Session</a>
+  <a class="button" href="/sessions/upcoming">Upcoming Sessions</a>
+  <a class="button" href="/sessions/past">Past Sessions</a>
+</div>
+<div class="calendar">
+  <% time = Time.now%>
+  <% year = time.strftime('%y').to_i() %>
+  <% month = time.strftime('%m').to_i() %>
+  <%= calendar(:year => year, :month => month ) %>
+  <button type="button" name="button">Prev Month</button>
+  <button type="button" name="button">Next Month</button>
+</div>
+<div>
+  <table class="table-container">
+    <tr>
+      <th>Time</th>
+      <th>Date</th>
+      <th>Session</th>
+    </tr>
+  <% for session in @sessions %>
+    <tr>
+      <td><a class="session-list" href="/sessions/<%= session.id%>"><%= session.starts_at %></td>
+      <td><%= Date.parse(session.on_date).strftime('%A')%>
+      <%= Date.parse(session.on_date).strftime('%d').to_i %>th
+      <%= Date.parse(session.on_date).strftime('%b')%></td>
+      <td><%= session.type %> with
+      <% trainer = session.find_trainer() %>
+      <%= trainer.pretty_name() %></td>
+    </tr>
+    <% end %>
+</div>
