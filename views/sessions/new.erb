@@ -1,15 +1,24 @@
-<p>
+<h2>Add New Session</h2>
+<div></div>
+<div class="form-wrapper">
 <form method = "post" action ="/sessions">
 
+  <div class="field">
   <label for = "type">Session Type:</label>
     <input id= "type" type="test" name="type"/>
-<br>
+    </div>
+
+    <div class="field">
   <label for = "starts at">Starts at:</label>
     <input id= "starts at" type="time" name="starts_at"/>
-<br>
+    </div>
+
+    <div class="field">
   <label for = "date">Date:</label>
     <input id= "date" type="date" name="on_date"/>
-<br>
+    </div>
+
+    <div class="field">
   <label for = "capacity">Trainer:</label>
     <select id="trainer" name="led_by">
   <% @trainers.each do |trainer| %>
@@ -17,11 +26,12 @@
   <%=trainer.pretty_name()%> </option>
   <% end %>
 </select>
-<br>
-Recurring sessions:
-<br>
+  </div>
+  Recurring Sessions:
+  <div class="field">
 <label for = "recurring">Number of weeks to repeat:</label>
   <input id= "recurring" type="number" name="recurring" min="0" max="52" value="0"/>
 
   <input class="new" type="submit" value="Add Session"/>
-</p>
+  </div>
+</div>

@@ -1,12 +1,16 @@
-<p>Booking id: <%= @booking.id %>
-<% @member = Member.find(@booking.member_id) %>
-<%  @session = Session.find(@booking.session_id) %>
- -
- <%= @member.pretty_name %>
- -
- <%= @session.type %>
-</p>
+<h1>Booking Details</h1>
+<div class="button-wrapper">
+  <form method="post" action ="/bookings/<%= @booking.id %>/delete">
+    <button class="delete" type="submit" value="Delete Booking">Delete Booking</button>
+  </form>
+</div>
 
-<form method="post" action ="/bookings/<%= @booking.id %>/delete">
-  <button class="delete" type="submit" value="Delete Booking">Delete Booking</button>
-</form>
+<div class="detail-wrapper">
+  <div class="detail-content-wrapper">
+    <p>Booking id: <%= @booking.id %>
+      <% @member = Member.find(@booking.member_id) %>
+      <%  @session = Session.find(@booking.session_id) %>
+      <p>Member: <%= @member.pretty_name %></p>
+      <p>Session: <%= @session.type %></p>
+    </div>
+  </div>

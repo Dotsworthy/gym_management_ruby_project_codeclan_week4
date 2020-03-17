@@ -1,20 +1,32 @@
-<p>
-<form method="post" action ="/sessions/<%= @session.id %>/delete">
-  <button class="delete" type="submit" value="Delete Session">Delete Session</button>
-</form>
+<h1>Session Page</h1>
+<h2>Session Actions</h2>
+<h2>Session Details</h2>
 
-<form method="get" action ="/sessions/<%= @session.id %>/update">
-  <button class="update" type="submit" value="Update session">Update Session</button>
-</form>
+<div>
+  <div class="button-wrapper">
+    <form method="post" action ="/sessions/<%= @session.id %>/delete">
+      <button class="delete" type="submit" value="Delete Session">Delete Session</button>
+    </form>
 
-<p>Type: <%= @session.type %> </p>
-<p>Starts at: <%= @session.starts_at %> </p>
-<p>Date: <%= @session.on_date %> </p>
-<p>Led By: <%= @trainer.pretty_name() %></p>
+    <form method="get" action ="/sessions/<%= @session.id %>/update">
+      <button class="update" type="submit" value="Update session">Update Session</button>
+    </form>
+  </div>
+</div>
 
-<h1> Members in Session</h1>
+<div class="detail-wrapper">
+<div class="detail-content-wrapper">
+  <p>Type: <%= @session.type %></p>
+  <p>Starts at: <%= @session.starts_at %></p>
+  <p>Date: <%= @session.on_date %></p>
+  <p>Led By: <%= @trainer.pretty_name() %></p>
+</div>
+</div>
 
-<p>
+<div></div>
+
+<h2> Members in Session</h2>
+<div></div>
 <% for member in @members_signed_up %>
   <ul>
     <li><a class="text" href="/members/<%= member.id%>"> <%= member.pretty_name %> </a>

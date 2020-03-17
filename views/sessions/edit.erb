@@ -1,15 +1,24 @@
-<p>
+<h2>Update Session</h2>
+<div></div>
+<div class="form-wrapper">
 <form method = "post" action ="/sessions/<%= @session.id %>">
 
+  <div class="field">
   <label for = "type">Session Type:</label>
   <input id= "type" type="test" name="type" value= "<%= @session.type %>"/>
-<br>
+  </div>
+
+  <div class="field">
   <label for = "starts at">Starts at:</label>
     <input id= "starts at" type="time" name="starts_at" value= "<%= @session.starts_at %>"/>
-<br>
+    </div>
+
+    <div class="field">
   <label for = "date">Date:</label>
     <input id= "date" type="date" name="on_date" value= "<%= @session.on_date %>"/>
-<br>
+    </div>
+
+    <div class="field">
     <label for = "capacity">Trainer:</label>
       <select id="trainer" name="led_by">
       <option value="<% @session.led_by %>"selected disabled hidden> <%= @trainer.pretty_name() %></option>
@@ -18,6 +27,6 @@
         <%=trainer.pretty_name()%> </option>
         <% end %>
   </select>
-<br>
+  </div>
+
   <input class="new" type="submit" value="Update Session"/>
-</p>
