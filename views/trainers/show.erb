@@ -2,7 +2,8 @@
 <h2>Trainer Actions</h2>
 <h2>Trainer Details</h2>
 
-<p>
+<div>
+  <div class="button-wrapper">
 <form method="post" action ="/trainers/<%= @trainer.id %>/delete">
   <button class="delete" type="submit" value="Delete Trainer">Delete Trainer</button>
 </form>
@@ -10,11 +11,15 @@
 <form method="get" action ="/trainers/<%= @trainer.id %>/update">
   <button class ="update" type="submit" value="Update Trainer">Update Trainer</button>
 </form>
-<br>
-<br>
+  </div>
+</div>
+
+<div class="detail-wrapper">
+  <div class="detail-content-wrapper">
 Name: <%= @trainer.pretty_name %>
 <br>
-Alias: <%= @trainer.alias %>
-<br>
-</p>
+Username: <%= @trainer.user_name %>
+  </div>
+
 <img class="profile" src="<%=@trainer.image_url%>.jpg" class="thumbnail" alt="Man">
+</div>
