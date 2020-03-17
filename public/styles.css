@@ -35,6 +35,10 @@ h1 {
   grid-column-end: 3;
 }
 
+h2 {
+  margin-left: 10px;
+}
+
 table {
     border-collapse: collapse;
     border: 2px solid black;
@@ -194,6 +198,16 @@ input.new {
   width: 50%;
 }
 
+button {
+  border: 2px solid black;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 2px;
+}
+
 button.update {
   background-color: #E9B44C; /* Green */
 }
@@ -228,6 +242,24 @@ button.delete {
   margin-left: 5px;
 }
 
+.detail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F7F4F3;
+  width: 40vw;
+  margin-left: 9px;
+  border: 2px solid black;
+}
+
+.detail-content-wrapper {
+  margin: 10px;
+}
+
+.button-wrapper {
+  width: 15vw;
+  margin: 2px;
+}
+
 form {
   display: grid;
 }
@@ -244,10 +276,9 @@ table, th, td {
 
 
 img.profile {
-  width: 225px;
-  height: 300px;
-  float: right;
-  margin: 50px;
+  width: 18vw;
+  margin: 1vw 1vh;
+  border: 2px solid black;
 }
 
 img {
