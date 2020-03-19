@@ -5,14 +5,7 @@
   <a class="button" href="/sessions/upcoming">Upcoming Sessions</a>
   <a class="button" href="/sessions/past">Past Sessions</a>
 </div>
-<div class="calendar">
-  <% time = Time.now%>
-  <% year = time.strftime('%y').to_i() %>
-  <% month = time.strftime('%m').to_i() %>
-  <%= calendar(:year => year, :month => month ) %>
-  <button type="button" name="button">Prev Month</button>
-  <button type="button" name="button">Next Month</button>
-</div>
+<div></div>
 <div>
   <table class="table-container">
     <tr>
