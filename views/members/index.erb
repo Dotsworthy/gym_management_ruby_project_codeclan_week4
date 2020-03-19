@@ -6,27 +6,28 @@
 </div>
 
 <div class="members-form-wrapper">
-  <form method="get" action ="/members/filtered-by-search">
+  <form method="get" action ="/members">
     <div class="field">
-      <input class="search-bar" type="text" name="search" value="">
+      <input class="search-bar" type="name_query" name="search" value="">
       <input class ="submit" type="submit" value="Search">
     </div>
-  </form></div>
-  <table class="table-container">
-    <tr>
-      <th>Username</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-    <% if @members != "No results" then %>
+  </form>
+</div>
+<table class="table-container">
+  <tr>
+    <th>Username</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <% if @members != "No results" then %>
     <% for member in @members %>
-    <tr>
-      <td><a href="/members/<%= member.id%>"><%= member.user_name %></a></td>
-      <td><%= member.first_name %></td>
-      <td><%= member.last_name %></td>
-    </tr>
+  <tr>
+    <td><a href="/members/<%= member.id%>"><%= member.user_name %></a></td>
+    <td><%= member.first_name %></td>
+    <td><%= member.last_name %></td>
+  </tr>
     <% end %>
-    <% else %>
+  <% else %>
     <%= "No Results" %>
-    <% end %>
-  </table>
+  <% end %>
+</table>

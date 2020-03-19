@@ -4,7 +4,11 @@ require_relative( '../models/member.rb' )
 also_reload( '../models/*' )
 
 get "/members" do
-  @members = Member.all()
+  if params[:name_query]
+    @members = Member.search([:name_query])
+  else
+    @members = Member.all()
+  end
   erb (:"members/index")
 end
 
@@ -38,9 +42,4 @@ get "/members/:id" do
     @members = Member.all()
     @member = Member.find(params[:id].to_i)
     erb(:"members/show")
-end
-
-get "members/filtered-by-search/?search=:params" do
-  @members = Member.search[:params]
-  erb(:"members/index")
 end
