@@ -16,7 +16,7 @@ class SqlRunner
       database_config = {host: "localhost", dbname: "gym"}
     end
     begin
-      db = PG.connect({database_config})
+      db = PG.connect(database_config)
       db.prepare("query", sql)
       result = db.exec_prepared( "query", values )
     ensure
