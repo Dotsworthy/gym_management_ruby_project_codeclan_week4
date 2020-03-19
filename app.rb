@@ -5,7 +5,6 @@ require_relative("controllers/bookings_controller")
 require_relative("controllers/members_controller")
 require_relative("controllers/sessions_controller")
 require_relative("controllers/trainers_controller")
-require_relative("models/calendar.rb")
 also_reload( '../models/*' )
 
 
