@@ -2,8 +2,6 @@ require_relative( "../models/member.rb" )
 require_relative("../models/trainer.rb")
 require_relative( "../models/session.rb" )
 require_relative( "../models/booking.rb" )
-require("pry-byebug")
-
 
 Booking.delete_all()
 Session.delete_all()
