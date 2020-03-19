@@ -19,6 +19,10 @@ get "/" do
   erb(:landing_page, :layout => :layout_splash )
 end
 
+error 404 do
+  @message = "404: We couldn't find that page!"
+end
+
 get "/index" do
   day = Date.today.strftime('%d')
   @sessions = Session.find_all_for_day_of_week(day)

@@ -1,7 +1,7 @@
-DROP TABLE bookings;
-DROP TABLE members;
-DROP TABLE sessions;
-DROP TABLE trainers;
+DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS trainers;
 
 CREATE TABLE members (
   id SERIAL PRIMARY KEY,
