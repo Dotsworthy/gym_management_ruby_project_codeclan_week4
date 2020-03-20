@@ -166,6 +166,3 @@ booking3 = Booking.new({
   "session_id" => session1.id
   })
 booking3.save()
-
-binding.pry()
-nil
