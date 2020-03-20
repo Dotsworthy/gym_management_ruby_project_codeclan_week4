@@ -56,6 +56,10 @@ class Member
     SqlRunner.run(sql, values)
   end
 
+  def image_change(image)
+    @image_url = image
+  end
+
   def self.delete_all()
     sql = "DELETE FROM members"
     SqlRunner.run( sql )

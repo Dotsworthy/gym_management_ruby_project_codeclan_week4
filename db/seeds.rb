@@ -13,7 +13,7 @@ member1 = Member.new({
   "first_name" => "Dwayne",
   "last_name" => "Johnson",
   "user_name" => "The Rock",
-  "image_url" => "/images/1"
+  "image_url" => "1.jpg"
   })
 member1.save()
 
@@ -21,7 +21,7 @@ member2 = Member.new({
   "first_name" => "Steve",
   "last_name" => "Austin",
   "user_name" => "Stone Cold",
-  "image_url" => "/images/2"
+  "image_url" => "2.jpg"
   })
 member2.save()
 
@@ -29,7 +29,7 @@ member3 = Member.new({
   "first_name" => "Paul",
   "last_name" => "Lavesque",
   "user_name" => "Triple H",
-  "image_url" => "/images/3"
+  "image_url" => "3.jpg"
   })
 member3.save()
 
@@ -37,7 +37,7 @@ member4 = Member.new({
   "first_name" => "Shawn",
   "last_name" => "Michaels",
   "user_name" => "The Heartbreak Kid",
-  "image_url" => "/images/4"
+  "image_url" => "4.jpeg"
   })
 member4.save()
 
@@ -45,7 +45,7 @@ trainer1 = Trainer.new({
   "first_name" => "Randy",
   "last_name" => "Savage",
   "user_name" => "Macho Man",
-  "image_url" => "/images/5"
+  "image_url" => "5.jpg"
   })
 trainer1.save()
 
@@ -53,7 +53,7 @@ trainer2 = Trainer.new({
   "first_name" => "Ric",
   "last_name" => "Flair",
   "user_name" => "Nature Boy",
-  "image_url" => "/images/6"
+  "image_url" => "6.jpg"
   })
 trainer2.save()
 
@@ -61,7 +61,7 @@ trainer3 = Trainer.new({
   "first_name" => "Hulk",
   "last_name" => "Hogan",
   "user_name" => "Hulkamaniac",
-  "image_url" => "/images/7"
+  "image_url" => "7.jpg"
   })
 trainer3.save()
 
