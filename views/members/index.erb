@@ -8,18 +8,18 @@
 <div class="members-form-wrapper">
   <form method="get" action ="/members">
     <div class="field">
-      <input class="search-bar" type="name_query" name="search" value="">
+      <input class="search-bar" type="text" name="name_query" value="">
       <input class ="submit" type="submit" value="Search">
     </div>
   </form>
 </div>
 <table class="table-container">
+    <% if @members.length > 0 then %>
   <tr>
     <th>Username</th>
     <th>First Name</th>
     <th>Last Name</th>
   </tr>
-  <% if @members != "No results" then %>
     <% for member in @members %>
   <tr>
     <td><a href="/members/<%= member.id%>"><%= member.user_name %></a></td>
@@ -28,6 +28,6 @@
   </tr>
     <% end %>
   <% else %>
-    <%= "No Results" %>
+  <p><%= "No Results" %></p>
   <% end %>
 </table>

@@ -8,8 +8,6 @@ Session.delete_all()
 Member.delete_all()
 Trainer.delete_all()
 
-
-
 # Members
 member1 = Member.new({
   "first_name" => "Dwayne",

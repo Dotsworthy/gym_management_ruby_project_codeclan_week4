@@ -78,12 +78,7 @@ class Member
     sql = "Select * FROM members WHERE LOWER(first_name) LIKE $1 OR LOWER(last_name) LIKE $1 OR LOWER(user_name) LIKE $1"
     values = ["%#{string.downcase}%"]
     search = SqlRunner.run(sql, values)
-    result = search.map { |member| Member.new(member) }
-    if result.length == 0
-      return "No results"
-    else
-      return result
-    end
+    return result = search.map { |member| Member.new(member) }
   end
 
 end

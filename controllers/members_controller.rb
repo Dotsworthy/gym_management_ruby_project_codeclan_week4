@@ -5,7 +5,7 @@ also_reload( '../models/*' )
 
 get "/members" do
   if params[:name_query]
-    @members = Member.search([:name_query])
+    @members = Member.search(params[:name_query])
   else
     @members = Member.all()
   end

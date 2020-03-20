@@ -13,7 +13,7 @@ class SqlRunner
         password: uri.password
       }
     else
-      database_config = {host: "localhost", dbname: "gym"}
+      database_config = {host: "localhost", dbname: "wrestling_gym"}
     end
     begin
       db = PG.connect(database_config)
