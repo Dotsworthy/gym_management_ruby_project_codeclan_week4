@@ -51,6 +51,10 @@ class Trainer
     return "#{@first_name} #{@last_name}"
   end
 
+  def image_change(image)
+    @image_url = image
+  end
+
   def self.all()
     sql = "SELECT * FROM trainers"
     results = SqlRunner.run(sql)

@@ -21,5 +21,9 @@ Name: <%= @trainer.pretty_name %>
 Username: <%= @trainer.user_name %>
   </div>
 
-<img class="profile" src="<%=@trainer.image_url%>.jpg" class="thumbnail" alt="Man">
+<img class="profile" src="/images/<%=@trainer.image_url%>" class="thumbnail" alt="Man">
+<form action='/trainers/<%= @trainer.id %>/upload-image' enctype="multipart/form-data" method='POST'>
+  <input name="file" type="file" />
+  <input type="submit" value="Upload"/>
+</form>
 </div>

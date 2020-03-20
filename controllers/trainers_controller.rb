@@ -29,6 +29,16 @@ post "/trainers/:id" do
   redirect to("/trainers")
 end
 
+post '/trainers/:id/upload-image' do
+    tempfile = params[:file][:tempfile]
+    filename = params[:file][:filename]
+    cp(tempfile.path, "public/images/#{filename}")
+    trainer = Trainer.find(params[:id])
+    trainer.image_change(filename)
+    trainer.update()
+    redirect("/trainers/#{params[:id]}")
+end
+
 post "/trainers/:id/delete" do
   Trainer.delete(params[:id])
   redirect to ("/trainers")
