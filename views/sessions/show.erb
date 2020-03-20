@@ -27,9 +27,11 @@
 
 <h2> Members in Session</h2>
 <div></div>
+<div>
 <% for member in @members_signed_up %>
   <ul>
     <li><a class="text" href="/members/<%= member.id%>"> <%= member.pretty_name %> </a>
   </ul>
 
 <% end %>
+</div>
