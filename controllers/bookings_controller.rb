@@ -7,8 +7,8 @@ require_relative('../models/trainer.rb')
 also_reload( '../models/*' )
 
 get "/bookings" do
-  @bookings = Booking.all()
-  erb(:"bookings/index")
+    @bookings = Booking.all()
+  erb (:"bookings/index")
 end
 
 post "/bookings" do

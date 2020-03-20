@@ -5,7 +5,11 @@ also_reload( '../models/*' )
 
 
 get "/trainers" do
-  @trainers = Trainer.all()
+  if params[:name_query]
+    @trainers = Trainer.search(params[:name_query])
+  else
+    @trainers = Trainer.all()
+  end
   erb (:"trainers/index")
 end
 

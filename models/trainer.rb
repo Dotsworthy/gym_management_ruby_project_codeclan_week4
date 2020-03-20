@@ -75,3 +75,10 @@ class Trainer
     SqlRunner.run( sql )
   end
 end
+
+def Trainer.search(string)
+  sql = "Select * FROM trainers WHERE LOWER(first_name) LIKE $1 OR LOWER(last_name) LIKE $1 OR LOWER(user_name) LIKE $1"
+  values = ["%#{string.downcase}%"]
+  search = SqlRunner.run(sql, values)
+  return result = search.map { |trainer| Trainer.new(trainer) }
+end

@@ -1,25 +1,23 @@
 <h1>Bookings List</h1>
-<h2>Booking Search</h2>
+<div></div>
 <div class="member-title-wrapper">
   <h2>Booking List</h2>
   <a class="button" href="bookings/new">Create Booking</a>
-  </div>
-  <div class="members-form-wrapper">
-    <input class="search-bar" type="text" name="search" value="">
-    <input class="search-image" type="image" src="images/search.png" alt="Submit"></div>
-  <table class="table-container">
-    <tr>
-      <th>Booking_ID</th>
-      <th>Member</th>
-      <th>Session</th>
-    </tr>
-<% for booking in @bookings %>
-<tr>
-<% member = Member.find(booking.member_id) %>
-<% session = Session.find(booking.session_id) %>
-<td><a href="/bookings/<%= booking.id%>"><%= booking.id %></a></td>
-<td><%= member.pretty_name %></td>
-<td><%= session.type %></td>
-</tr>
-<% end %>
+</div>
+<div></div>
+<table class="table-container">
+  <tr>
+    <th>Booking_ID</th>
+    <th>Member</th>
+    <th>Session</th>
+  </tr>
+  <% for booking in @bookings %>
+  <tr>
+    <% member = Member.find(booking.member_id) %>
+    <% session = Session.find(booking.session_id) %>
+    <td><a href="/bookings/<%= booking.id%>"><%= booking.id %></a></td>
+    <td><%= member.pretty_name %></td>
+    <td><%= session.type %></td>
+  </tr>
+  <% end %>
 </table>
