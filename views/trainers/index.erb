@@ -1,17 +1,21 @@
+<div class="index-container">
+
 <h1>Gym Trainers</h1>
 <h2>Trainer Search</h2>
-<div class="member-title-wrapper">
+
+<div class="content-heading">
   <h2>Trainer List</h2>
-  <a class="button" href="trainers/new">Add Trainer</a>
-  </div>
-  <div class="members-form-wrapper">
-    <form method="get" action ="/trainers">
-      <div class="field">
-        <input class="search-bar" type="text" name="name_query" value="">
-        <input class ="submit" type="submit" value="Search">
-      </div>
-    </form>
-  </div>
+</div>
+
+<div class="side-bar-wrapper">
+  <form method="get" action ="/trainers">
+      <input class="search-bar" type="text" name="name_query" value="">
+      <input id ="small-button" type="submit" value="Search">
+  </form>
+  <a id="button" href="trainers/new">Add New Trainer</a>
+</div>
+
+
   <table class="table-container">
       <% if @trainers.length > 0 then %>
     <tr>
@@ -28,3 +32,4 @@
     <p><%= "No Results" %></p>
     <% end %>
   </table>
+</div>

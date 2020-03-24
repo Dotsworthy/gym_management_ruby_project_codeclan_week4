@@ -1,23 +1,16 @@
 <h2>Update Member</h2>
-<div></div>
-<div class="form-wrapper">
-  <form method = "post" action ="/members/<%= @member.id %>">
 
-    <div class="field">
+  <form class="form-wrapper" method = "post" action ="/members/<%= @member.id %>">
+
       <label for = "first-name">First Name:</label>
       <input id= "first-name" type="test" name="first_name" value= "<%= @member.first_name %>"/>
-    </div>
 
-    <div class="field">
+
       <label for= "last-name">Last Name:</label>
       <input id= "last-name" type="text" name="last_name" value= "<%= @member.last_name %>"/>
-    </div>
-
-    <div class="field">
-
 
       <label for= "user-name">Username:</label>
       <input id= "user-name" type="text" name="user_name" value= "<%= @member.user_name %>"/>
-    </div>
 
-    <input class="new" type="submit" value="Update Member"/>
+  <input class="new" type="submit" value="Update Member"/>
+</form>

@@ -1,9 +1,12 @@
+<div class="index-container">
+
+
+
 <h1>Session Page</h1>
 <h2>Session Actions</h2>
 <h2>Session Details</h2>
 
-<div>
-  <div class="button-wrapper">
+  <div class="side-bar-wrapper">
     <form method="post" action ="/sessions/<%= @session.id %>/delete">
       <button class="delete" type="submit" value="Delete Session">Delete Session</button>
     </form>
@@ -11,8 +14,8 @@
     <form method="get" action ="/sessions/<%= @session.id %>/update">
       <button class="update" type="submit" value="Update session">Update Session</button>
     </form>
-  </div>
-</div>
+    </div>
+
 
 <div class="detail-wrapper">
 <div class="detail-content-wrapper">
@@ -23,15 +26,14 @@
 </div>
 </div>
 
-<div></div>
 
 <h2> Members in Session</h2>
-<div></div>
-<div>
+
 <% for member in @members_signed_up %>
   <ul>
     <li><a class="text" href="/members/<%= member.id%>"> <%= member.pretty_name %> </a>
   </ul>
 
 <% end %>
+
 </div>

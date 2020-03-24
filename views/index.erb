@@ -1,27 +1,53 @@
+<div class="index-container">
 
-<h1><%= day = Time.now.strftime('%A %d %B') %></h1>
-<div><h2><p>Quick Add:</p><h2></div>
+  <h1><%= day = Time.now.strftime('%A %d %B') %></h1>
+  <h2>Quick Add:</h2>
+
+
   <div class="index-button-wrapper">
     <a class="index" href="/sessions/new">New Session</a>
     <a class="index" href="members/new">New Member</a>
     <a class="index" href="bookings/new">New Booking</a>
   </div>
-  <div><h2>Today's Sessions</h2></div>
 
-      <table>
-        <tr>
-          <th>Time</th>
-          <th>Date</th>
-          <th>Type</th>
+  <div class="content-heading">
+    <h2>Welcome!</h2>
+  </div>
+
+  <div class="welcome">
+      <p>This is a concept gym app based on the following brief set by CodeClan:
+        <br>
+        <br>
+        A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes
+        <br>
+        <br>
+        <ul>
+          <li>The app should allow the gym to create / edit / delete members</li>
+          <li>The app should allow the gym to create / edit / delete classes</li>
+          <li>The app should allow the gym to add members to specific classes</li>
+          <li>The app should show a list of all upcoming classes</li>
+          <li>The app should show all members that are registered for a particular class</li>
+        </ul>
+      </p>
+  </div>
+
+  <h2>Today's Sessions</h2>
+  <table>
+    <tr>
+      <th>Time</th>
+      <th>Date</th>
+      <th>Type</th>
+    </tr>
+    <% for session in @sessions %>
+    <tr>
+      <td>
+        <%= session.starts_at %></td>
+        <td><%= Date.parse(session.on_date).strftime('%A')%>
+          <%= Date.parse(session.on_date).strftime('%d').to_i %>th
+          <%= Date.parse(session.on_date).strftime('%b')%></td>
+          <td><%= session.type %></td>
+          <% end %>
         </tr>
-        <% for session in @sessions %>
-        <tr>
-          <td>
-            <%= session.starts_at %></td>
-            <td><%= Date.parse(session.on_date).strftime('%A')%>
-              <%= Date.parse(session.on_date).strftime('%d').to_i %>th
-              <%= Date.parse(session.on_date).strftime('%b')%></td>
-              <td><%= session.type %></td>
-              <% end %>
-            </tr>
-          </table>
+      </table>
+
+    </div>

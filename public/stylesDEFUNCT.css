@@ -1,0 +1,306 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #009B72;
+}
+
+nav {
+  width: 100%;
+  padding: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  display: inline-block;
+  position: sticky;
+  background-color: #2A2D34;
+}
+
+nav a.nav:link {
+  color: white;
+  text-align: center;
+  margin-right: 10px;
+  text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+nav a.nav:visited {
+ color: white;
+}
+
+h1 {
+  font-size: 6vw;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+h2 {
+  margin-left: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    width: 90%;
+    margin-top: 15px;
+}
+
+th {
+  border: 2px solid black;
+  background-color: #E9B44C;
+  color: white;
+  padding: 8px;
+}
+
+td {
+  border: 2px solid black;
+  padding: 8px;
+}
+
+tr {
+  border: 2px solid black;
+  background-color: white;
+  padding: 8px;
+}
+ul {
+  border: 2px solid black;
+  background-color: white;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: #dddddd;
+}
+
+footer {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: white;
+  top: 95%;
+  left: 85%;
+  font-size: 10px;
+  position: fixed;
+}
+
+.body-content {
+  display: grid;
+  grid-template-columns: 25% 3fr;
+  left: 2%;
+  position: relative;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  background-color: #009B72;
+}
+
+.index-button-wrapper {
+  display: grid;
+  grid-row-start: 3;
+  padding: 10px;
+}
+
+.body-content a {
+  color: black;
+}
+
+.body-content a:link {
+  text-decoration: none;
+}
+.body-content a:visited {
+  text-decoration: none;
+}
+
+.index-button-wrapper a.index {
+  background-color: #9B2915;
+  border: 2px solid black;
+  color: white;
+  margin: 5px;
+  padding: 35px 72px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.body-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.body-content a.button {
+  background-color: #9B2915;
+  border: 2px solid black;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.body-container form {
+  display: inline-block;
+}
+
+.body-container button {
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position:static;
+  font-size: 16px;
+}
+
+.body-container label {
+  padding-right: 50px;
+  display: grid;
+}
+
+.body-container option {
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position:static;
+  font-size: 16px;
+}
+
+.body-container input {
+  border: none;
+  color: black;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position:static;
+  font-size: 16px;
+}
+
+.members-form-wrapper {
+  display: flex;
+  width: 90%;
+  height: 50px;
+  padding-top: 16px;
+}
+
+.member-title-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+input.new {
+  background-color: #9B2915;
+  border: 2px solid black;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 50%;
+}
+
+button {
+  border: 2px solid black;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 2px;
+}
+
+button.update {
+  background-color: #E9B44C; /* Green */
+}
+
+button.delete {
+  background-color: #9B2915; /* Green */
+}
+
+.body-container a.index:link {
+  text-decoration: none;
+}
+.body-container a.index:visited {
+  color: black;
+}
+
+.body-container h1 {
+  margin-top: 25px;
+}
+
+.member-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bar {
+  width: 200px;
+  border: 2px solid black;
+}
+
+.search-image {
+  height: 90%;
+  margin-left: 5px;
+}
+
+.detail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F7F4F3;
+  width: 40vw;
+  margin-left: 9px;
+  border: 2px solid black;
+}
+
+.detail-content-wrapper {
+  margin: 10px;
+}
+
+.button-wrapper {
+  width: 15vw;
+  margin: 2px;
+}
+
+.session-list {
+  display: grid;
+}
+
+.calendar{
+
+}
+
+form {
+  display: grid;
+}
+
+form .field {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+
+img.profile {
+  width: 18vw;
+  margin: 1vw 1vh;
+  border: 2px solid black;
+}
+
+img {
+	max-width: 100%;
+  max-height: auto%;
+	}
+
+img.thumbnail {
+
+	width: 250px;
+	height: 200px;
+}

@@ -1,24 +1,17 @@
 <h2>Update Trainer</h2>
 
-<div></div>
+<form class="form-wrapper" method = "post" action ="/trainers/<%= @trainer.id %>">
 
-<div class="form-wrapper">
+  <label for = "first-name">First Name:</label>
+  <input id= "first-name" type="test" name="first_name" value= "<%= @trainer.first_name %>"/>
 
-  <form method = "post" action ="/trainers/<%= @trainer.id %>">
 
-    <div class="field">
-      <label for = "first-name">First Name:</label>
-      <input id= "first-name" type="test" name="first_name" value= "<%= @trainer.first_name %>"/>
-    </div>
+  <label for= "last-name">Last Name:</label>
+  <input id= "last-name" type="text" name="last_name" value= "<%= @trainer.last_name %>"/>
 
-    <div class="field">
-      <label for= "last-name">Last Name:</label>
-      <input id= "last-name" type="text" name="last_name" value= "<%= @trainer.last_name %>"/>
-    </div>
 
-    <div class="field">
-      <label for= "user-name">Username:</label>
-      <input id= "user-name" type="text" name="user_name" value= "<%= @trainer.user_name %>"/>
-    </div>
+  <label for= "user-name">Username:</label>
+  <input id= "user-name" type="text" name="user_name" value= "<%= @trainer.user_name %>"/>
 
-    <input class="new" type="submit" value="Update Trainer"/>
+  <input class="new" type="submit" value="Update Trainer"/>
+</form>
