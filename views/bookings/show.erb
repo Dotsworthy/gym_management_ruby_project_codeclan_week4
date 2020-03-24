@@ -1,16 +1,21 @@
-<h1>Booking Details</h1>
-<div class="button-wrapper">
-  <form method="post" action ="/bookings/<%= @booking.id %>/delete">
-    <button class="delete" type="submit" value="Delete Booking">Delete Booking</button>
-  </form>
-</div>
+<div class="index-container">
+  <h1>Booking Details</h1>
+  <h2>Booking Actions</h2>
+  <h2>Booking Details</h2>
+  <div class="side-bar-wrapper">
+    <form method="post" action ="/bookings/<%= @booking.id %>/delete">
+      <button id="button" class="delete" type="submit" value="Delete Booking">Delete Booking</button>
+    </form>
+  </div>
+  <div class="content-wrapper">
+    <div class="content">
 
-<div class="detail-wrapper">
-  <div class="detail-content-wrapper">
-    <p>Booking id: <%= @booking.id %>
-      <% @member = Member.find(@booking.member_id) %>
-      <%  @session = Session.find(@booking.session_id) %>
-      <p>Member: <%= @member.pretty_name %></p>
-      <p>Session: <%= @session.type %></p>
+
+      <p>Booking id: <%= @booking.id %>
+        <% @member = Member.find(@booking.member_id) %>
+        <%  @session = Session.find(@booking.session_id) %>
+        <p>Member: <%= @member.pretty_name %></p>
+        <p>Session: <%= @session.type %></p>
+      </div>
     </div>
   </div>

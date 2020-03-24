@@ -18,12 +18,13 @@
     <p class="content">Name: <%= @member.pretty_name %>
     <br>
     Username: <%= @member.user_name %> </p>
+
+
     <img class="profile" src="/images/<%=@member.image_url%>" class="thumbnail" alt="Man">
-    <form action='/members/<%= @member.id %>/upload-image' enctype="multipart/form-data" method='POST'>
+    <form class="upload" action='/members/<%= @member.id %>/upload-image' enctype="multipart/form-data" method='POST'>
       <input name="file" type="file" required/>
       <input type="submit" value="Upload"/>
     </form>
-
     </div>
 
 </div>

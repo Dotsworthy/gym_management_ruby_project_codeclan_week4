@@ -9,7 +9,6 @@
 
 <div class="side-bar-wrapper">
   <a id="button" href="/sessions/new">Add New Session</a>
-  <a id="button" href="/sessions/upcoming">Upcoming Sessions</a>
   <a id="button" href="/sessions/past">Past Sessions</a>
 </div>
 
@@ -21,7 +20,7 @@
     </tr>
   <% for session in @sessions %>
     <tr>
-      <td><a class="session-list" href="/sessions/<%= session.id%>"><%= session.starts_at %></td>
+      <td><a href="/sessions/<%= session.id%>"><%= session.starts_at %></td>
       <td><%= Date.parse(session.on_date).strftime('%A')%>
       <%= Date.parse(session.on_date).strftime('%d').to_i %>th
       <%= Date.parse(session.on_date).strftime('%b')%></td>

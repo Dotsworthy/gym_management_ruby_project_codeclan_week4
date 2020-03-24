@@ -66,9 +66,13 @@ tr {
   padding: 8px;
 }
 
+form.upload {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
 input {
   margin: 2%;
-
 }
 
 footer {
@@ -81,6 +85,7 @@ footer {
 
 a:link {
   text-decoration: none;
+  color: black;
 }
 a:visited {
   color: black;
@@ -212,4 +217,8 @@ img.profile {
 
 .hidden {
   visibility: hidden;
+}
+
+.second-content-wrapper {
+  grid-column-start: 2;
 }
