@@ -6,7 +6,7 @@ require_relative('../models/booking.rb')
 require_relative('../models/trainer.rb')
 
 get "/sessions" do
-  @sessions = Session.available_sessions()
+  @sessions = Session.all()
   erb(:"sessions/index")
 end
 
@@ -37,10 +37,6 @@ post "/sessions/:id" do
   session.update()
   redirect to("/sessions")
 end
-
-# get "index" do
-#   @sessions = Session.available_sessions()
-# end
 
 get "/sessions/upcoming" do
   @sessions = Session.available_sessions()
