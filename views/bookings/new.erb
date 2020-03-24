@@ -1,15 +1,26 @@
 <h2>Add New Booking</h2>
-<div></div>
-<div class="form-wrapper">
-  <form method = "post" action ="/bookings">
+  <form class="form-wrapper" method = "post" action ="/bookings">
 
-    <div class="field">
-      <label for = "member-id">Member:</label>
-      <input id= "member-id" type="test" name="member_id"/>
-    </div>
-    <div class="field">
-      <label for= "session-id">Session:</label>
-      <input id= "session-id" type="text" name="session_id"/>
-    </div>
-    <input class="new" type="submit" value="Add Booking"/>
-  </div>
+
+    <label for = "capacity">Member:</label>
+    <select id="member" name="member_id">
+      <% @members.each do |member| %>
+      <option value= "<%= member.id()%>">
+        <%=member.pretty_name()%> </option>
+        <% end %>
+      </select>
+
+      <label for="session">Session</label>
+      <select id="session" name="session_id">
+        <% @sessions.each do |session| %>
+        <option value= "<%= session.id()%>">
+          <%=session.type%>
+          -
+          <%=session.on_date %>
+          -
+          <%=session.starts_at %>
+        </option>
+        <% end %>
+      </select>
+      <input class="new" type="submit" value="Add Booking"/>
+      </form>

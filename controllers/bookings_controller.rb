@@ -18,6 +18,8 @@ post "/bookings" do
 end
 
 get "/bookings/new" do
+  @members = Member.all()
+  @sessions = Session.all()
   erb (:"bookings/new")
 end
 
