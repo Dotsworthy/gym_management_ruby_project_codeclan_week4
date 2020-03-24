@@ -1,14 +1,22 @@
+<div class="index-container">
 <h1>Past Sessions</h1>
-<p>
+<div></div>
+<table>
+  <tr>
+
+
+  <th>Time</th>
+  <th>Date</th>
+  <th>Session</th>
+    </tr>
+
+<tr>
 <% for session in @sessions %>
-<a class="text" href="/sessions/<%= session.id%>">
-<%= session.starts_at %>
- -
-<%= Date.parse(session.on_date).strftime('%A')%>
-<%= Date.parse(session.on_date).strftime('%d').to_i %>th
-<%= Date.parse(session.on_date).strftime('%b')%>
- -
-<%= session.type %> </a>
-<br>
+<td> <a class="text" href="/sessions/<%= session.id%>">
+<%= session.starts_at %></a></td>
+<td><%= Date.parse(session.on_date).strftime('%A')%> <%= Date.parse(session.on_date).strftime('%d').to_i %>th <%= Date.parse(session.on_date).strftime('%b')%></td>
+<td><%= session.type %></td>
+</tr>
 <% end %>
-</p>
+</table>
+</div>

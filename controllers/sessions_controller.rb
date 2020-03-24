@@ -6,7 +6,7 @@ require_relative('../models/booking.rb')
 require_relative('../models/trainer.rb')
 
 get "/sessions" do
-  @sessions = Session.all()
+  @sessions = Session.available_sessions()
   erb(:"sessions/index")
 end
 
