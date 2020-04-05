@@ -1,10 +1,10 @@
 # Gym-Management-Ruby-Project-CCW4
-CodeClan ruby project showcase of a gym management app for admin. 
+CodeClan ruby project showcase of a gym management app for admin based on the following brief:
 
-Gym
+# Gym
 A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
 
-MVP
+# MVP
 The app should allow the gym to create / edit / delete members
 The app should allow the gym to create / edit / delete classes
 The app should allow the gym to add members to specific classes
