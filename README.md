@@ -1,4 +1,4 @@
-### Gym-Management-Ruby-Project-CCW4
+### Gym Management Ruby Project CodeClan Week4
 
 CodeClan ruby project showcase of a gym management app for admin based on the following brief:
 
